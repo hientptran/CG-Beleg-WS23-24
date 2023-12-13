@@ -1,0 +1,19 @@
+EXECUTABLE = Futurama
+CC = g++
+CPPFLAGS = -std=c++11 -g -O3 -I../ -DGL_DO_NOT_WARN_IF_MULTI_GL_VERSION_HEADERS_INCLUDED -I/opt/X11/include -I/opt/homebrew/Cellar/glew/2.2.0_1/include
+DEPS = glm/glm.hpp Log.hpp GLError.hpp Context.hpp Window.hpp Input.hpp Application.hpp Mouse.hpp Keyboard.hpp Material.h LightSource.h GLSLShader.hpp TriangleMesh.hpp Texture.hpp Futurama.hpp
+OBJ = ../GLError.o ../Window.o ../Application.o ../Keyboard.o ../TriangleMesh.o ../GLSL.o SceneGraph.o Node.o Robot.o Futurama.o
+LDFLAGS = -L/opt/X11/lib -L/opt/homebrew/Cellar/glew/2.2.0_1/lib
+LIBS= -framework OpenGL -lglew -lglut
+
+%.o: %.c $(DEPS)
+	$(CC) -c -o $@ $< $(CPPFLAGS)
+
+$(EXECUTABLE): $(OBJ)
+	$(CC) -o $@ $^ $(LDFLAGS) $(LIBS)
+
+.PHONY: clean
+
+clean:
+	rm -f *.o ../*.o *~ $(EXECUTABLE)		
+
