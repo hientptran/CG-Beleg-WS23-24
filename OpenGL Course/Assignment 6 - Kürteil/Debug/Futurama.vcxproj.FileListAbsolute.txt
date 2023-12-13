@@ -2,3 +2,4 @@ C:\Users\yagro\Documents\Studium\CG\Lang\Pflichtteil\OpenGL Course\Assignment 2 
 C:\Users\yagro\OneDrive\Dokumente\Studium\CG\Lang\Pflichtteil\OpenGL Course\Assignment 2 - Futurama\Debug\Futurama.exe
 C:\Users\yagro\OneDrive\Dokumente\Studium\CG\Lang\Pflichtteil\OpenGL Course\Assignment 6 - Kürteil\Debug\Futurama.exe
 D:\IKG\4. Semester\Computergrafik\OpenGL Course\Assignment 6 - Kürteil\Debug\Futurama.exe
+D:\IKG\4. Semester\Computergrafik\CG-Beleg-WS23-24\OpenGL Course\Assignment 6 - Kürteil\Debug\Futurama.exe
