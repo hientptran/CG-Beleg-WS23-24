@@ -30,7 +30,6 @@
     <ClInclude Include="Node.hpp" />
     <ClInclude Include="Robot.hpp" />
     <ClInclude Include="SceneGraph.hpp" />
-    <ClInclude Include="shader.hpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="picking.frag" />
@@ -58,7 +57,6 @@
     <ClCompile Include="Node.cpp" />
     <ClCompile Include="Robot.cpp" />
     <ClCompile Include="SceneGraph.cpp" />
-    <ClCompile Include="shader.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <Keyword>Win32Proj</Keyword>
