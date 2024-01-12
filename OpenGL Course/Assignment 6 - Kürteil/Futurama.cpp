@@ -84,10 +84,10 @@ void Futurama::init(){
 }
 
 // add a scenegraph
-void Futurama::addSceneGraph(SceneGraph *sceneGraph, std::map<Node, int> nodeVector){
+void Futurama::addSceneGraph(SceneGraph *sceneGraph, std::map<Node, int> nodeMap){
   
   sceneGraph->addLightSource(lightSource);
-  sceneGraph->addNodeVector(nodeVector);
+  sceneGraph->addnodeMap(nodeMap);
   Futurama::sceneGraph= sceneGraph;
 }
 
@@ -297,13 +297,13 @@ int main(int argc, char** argv){
   
   //  build the robot hierarchy (see robot.cpp)
   Node *root= Robot::build();
-  std::map<Node, int> nodeVector = Robot::nodeVector;
-  //cout << "Node count: " << nodeVector.size() << endl;
+  std::map<Node, int> nodeMap = Robot::nodeMap;
+  //cout << "Node count: " << nodeMap.size() << endl;
   
   //make scenegraph
   SceneGraph *sceneGraph= new SceneGraph(root);
 
-  Futurama::addSceneGraph(sceneGraph, nodeVector);
+  Futurama::addSceneGraph(sceneGraph, nodeMap);
  
   //start event loop
   InputManager<Futurama>::startEventLoop();

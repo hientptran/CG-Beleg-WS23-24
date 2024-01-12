@@ -90,8 +90,8 @@ static Node rightFoot(0, -1.75, 0,
 // ML schnapp
 
 //static std::map<int, Node> nodeMap;
-//static std::vector<Node> nodeVector{torso, head, antenna, leftArm, rightArm, leftLeg, rightLeg, leftFoot, rightFoot};
-std::map<Node, int> Robot::nodeVector;
+//static std::vector<Node> nodeMap{torso, head, antenna, leftArm, rightArm, leftLeg, rightLeg, leftFoot, rightFoot};
+std::map<Node, int> Robot::nodeMap;
 
 // build the robot scenegraph
 Node *Robot::build(){
@@ -149,64 +149,64 @@ Node *Robot::build(){
   rightFoot.setParent(&rightLeg);
   // ML schnapp
 
-  //nodeVector[0] = torso;
-  //nodeVector[1] = head;
-  //nodeVector[2] = antenna;
-  //nodeVector[3] = leftArm;
-  //nodeVector[4] = rightArm;
-  //nodeVector[5] = leftLeg;
-  //nodeVector[6] = rightLeg;
-  //nodeVector[7] = leftFoot;
-  //nodeVector[8] = rightFoot;
+  //nodeMap[0] = torso;
+  //nodeMap[1] = head;
+  //nodeMap[2] = antenna;
+  //nodeMap[3] = leftArm;
+  //nodeMap[4] = rightArm;
+  //nodeMap[5] = leftLeg;
+  //nodeMap[6] = rightLeg;
+  //nodeMap[7] = leftFoot;
+  //nodeMap[8] = rightFoot;
 
-  //nodeVector.push_back(torso);
-  //nodeVector.push_back(head);
-  //nodeVector.push_back(antenna);
-  //nodeVector.push_back(leftArm);
-  //nodeVector.push_back(rightArm);
-  //nodeVector.push_back(leftLeg);
-  //nodeVector.push_back(rightLeg);
-  //nodeVector.push_back(leftFoot);
-  //nodeVector.push_back(rightFoot);
+  //nodeMap.push_back(torso);
+  //nodeMap.push_back(head);
+  //nodeMap.push_back(antenna);
+  //nodeMap.push_back(leftArm);
+  //nodeMap.push_back(rightArm);
+  //nodeMap.push_back(leftLeg);
+  //nodeMap.push_back(rightLeg);
+  //nodeMap.push_back(leftFoot);
+  //nodeMap.push_back(rightFoot);
 
-  //nodeVector[torso] = 1;
-  //nodeVector[head] = 2;
-  //nodeVector[antenna] = 3;
-  //nodeVector[leftArm] = 4;
-  //nodeVector[rightArm] = 5;
-  //nodeVector[leftLeg] = 6;
-  //nodeVector[rightLeg] = 7;
-  //nodeVector[leftFoot] = 8;
-  //nodeVector[rightFoot] = 9;
+  //nodeMap[torso] = 1;
+  //nodeMap[head] = 2;
+  //nodeMap[antenna] = 3;
+  //nodeMap[leftArm] = 4;
+  //nodeMap[rightArm] = 5;
+  //nodeMap[leftLeg] = 6;
+  //nodeMap[rightLeg] = 7;
+  //nodeMap[leftFoot] = 8;
+  //nodeMap[rightFoot] = 9;
 
-  //nodeVector.insert({ head, 2 });
-  //nodeVector.insert({ antenna, 3 });
-  //nodeVector.insert({ leftArm, 4 });
-  //nodeVector.insert({ rightArm, 5 });
-  //nodeVector.insert({ leftLeg, 6 });
-  //nodeVector.insert({ rightLeg, 7 });
-  //nodeVector.insert({ leftFoot, 8 });
-  //nodeVector.insert({ rightFoot, 9 });
+  //nodeMap.insert({ head, 2 });
+  //nodeMap.insert({ antenna, 3 });
+  //nodeMap.insert({ leftArm, 4 });
+  //nodeMap.insert({ rightArm, 5 });
+  //nodeMap.insert({ leftLeg, 6 });
+  //nodeMap.insert({ rightLeg, 7 });
+  //nodeMap.insert({ leftFoot, 8 });
+  //nodeMap.insert({ rightFoot, 9 });
 
-  //nodeVector.insert(std::map<Node, int>::value_type(torso, 1));
-  //nodeVector.insert(std::map<Node, int>::value_type(head, 2 ));
-  //nodeVector.insert(std::map<Node, int>::value_type(antenna, 3 ));
-  //nodeVector.insert(std::map<Node, int>::value_type(leftArm, 4 ));
-  //nodeVector.insert(std::map<Node, int>::value_type(rightArm, 5 ));
-  //nodeVector.insert(std::map<Node, int>::value_type(leftLeg, 6 ));
-  //nodeVector.insert(std::map<Node, int>::value_type(rightLeg, 7 ));
-  //nodeVector.insert(std::map<Node, int>::value_type(leftFoot, 8 ));
-  //nodeVector.insert(std::map<Node, int>::value_type(rightFoot, 9 ));
+  //nodeMap.insert(std::map<Node, int>::value_type(torso, 1));
+  //nodeMap.insert(std::map<Node, int>::value_type(head, 2 ));
+  //nodeMap.insert(std::map<Node, int>::value_type(antenna, 3 ));
+  //nodeMap.insert(std::map<Node, int>::value_type(leftArm, 4 ));
+  //nodeMap.insert(std::map<Node, int>::value_type(rightArm, 5 ));
+  //nodeMap.insert(std::map<Node, int>::value_type(leftLeg, 6 ));
+  //nodeMap.insert(std::map<Node, int>::value_type(rightLeg, 7 ));
+  //nodeMap.insert(std::map<Node, int>::value_type(leftFoot, 8 ));
+  //nodeMap.insert(std::map<Node, int>::value_type(rightFoot, 9 ));
 
-    nodeVector.emplace(torso, 1);
-	nodeVector.emplace(head, 2);
-	nodeVector.emplace(antenna, 3);
-	nodeVector.emplace(leftArm, 4);
-	nodeVector.emplace(rightArm,5);
-	nodeVector.emplace(leftLeg, 6);
-	nodeVector.emplace(rightLeg,7);
-	nodeVector.emplace(leftFoot,8);
-	nodeVector.emplace(rightFoot,9);
+    nodeMap.emplace(torso, 1);
+	nodeMap.emplace(head, 2);
+	nodeMap.emplace(antenna, 3);
+	nodeMap.emplace(leftArm, 4);
+	nodeMap.emplace(rightArm,5);
+	nodeMap.emplace(leftLeg, 6);
+	nodeMap.emplace(rightLeg,7);
+	nodeMap.emplace(leftFoot,8);
+	nodeMap.emplace(rightFoot,9);
 
   // return root node
   return &torso;
