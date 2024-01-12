@@ -79,8 +79,8 @@ void Futurama::init(){
   // enable antialiasing
   glEnable(GL_MULTISAMPLE);
 
-  pickingShader.loadVertexShader("Shaders/picking.vert");
-  pickingShader.loadFragmentShader("Shaders/picking.frag");
+  //pickingShader.loadVertexShader("Shaders/picking.vert");
+  //pickingShader.loadFragmentShader("Shaders/picking.frag");
 }
 
 // add a scenegraph

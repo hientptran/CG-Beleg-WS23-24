@@ -86,6 +86,8 @@ static Node rightFoot(0, -1.75, 0,
 
 // ML schnapp
 
+static std::map<int, Node> nodeMap;
+
 // build the robot scenegraph
 Node *Robot::build(){
   
@@ -141,6 +143,16 @@ Node *Robot::build(){
   leftFoot.setParent(&leftLeg);
   rightFoot.setParent(&rightLeg);
   // ML schnapp
+
+  nodeMap[0] = torso;
+  nodeMap[1] = head;
+  nodeMap[2] = antenna;
+  nodeMap[3] = leftArm;
+  nodeMap[4] = rightArm;
+  nodeMap[5] = leftLeg;
+  nodeMap[6] = rightLeg;
+  nodeMap[7] = leftFoot;
+  nodeMap[8] = rightFoot;
   
   // return root node
   return &torso;
