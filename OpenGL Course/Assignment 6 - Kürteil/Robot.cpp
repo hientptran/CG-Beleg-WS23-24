@@ -7,6 +7,9 @@
                    htw berlin
    ------------------------------------------------------------- */
 
+// Include GLM
+#include <glm/glm.hpp>
+
 #include "Robot.hpp"
 #include "../Material.h"
 
@@ -86,7 +89,9 @@ static Node rightFoot(0, -1.75, 0,
 
 // ML schnapp
 
-static std::map<int, Node> nodeMap;
+//static std::map<int, Node> nodeMap;
+//static std::vector<Node> nodeVector{torso, head, antenna, leftArm, rightArm, leftLeg, rightLeg, leftFoot, rightFoot};
+std::vector<Node> Robot::nodeVector;
 
 // build the robot scenegraph
 Node *Robot::build(){
@@ -144,16 +149,26 @@ Node *Robot::build(){
   rightFoot.setParent(&rightLeg);
   // ML schnapp
 
-  nodeMap[0] = torso;
-  nodeMap[1] = head;
-  nodeMap[2] = antenna;
-  nodeMap[3] = leftArm;
-  nodeMap[4] = rightArm;
-  nodeMap[5] = leftLeg;
-  nodeMap[6] = rightLeg;
-  nodeMap[7] = leftFoot;
-  nodeMap[8] = rightFoot;
-  
+  //nodeVector[0] = torso;
+  //nodeVector[1] = head;
+  //nodeVector[2] = antenna;
+  //nodeVector[3] = leftArm;
+  //nodeVector[4] = rightArm;
+  //nodeVector[5] = leftLeg;
+  //nodeVector[6] = rightLeg;
+  //nodeVector[7] = leftFoot;
+  //nodeVector[8] = rightFoot;
+
+  nodeVector.push_back(torso);
+  nodeVector.push_back(head);
+  nodeVector.push_back(antenna);
+  nodeVector.push_back(leftArm);
+  nodeVector.push_back(rightArm);
+  nodeVector.push_back(leftLeg);
+  nodeVector.push_back(rightLeg);
+  nodeVector.push_back(leftFoot);
+  nodeVector.push_back(rightFoot);
+
   // return root node
   return &torso;
 }

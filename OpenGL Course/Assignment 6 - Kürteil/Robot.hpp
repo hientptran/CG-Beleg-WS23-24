@@ -12,6 +12,7 @@
 #include "Node.hpp"
 #include "TriangleMesh.hpp"
 #include "GLSL.hpp"
+#include "vector"
 
 class Robot{
 
@@ -19,4 +20,5 @@ public:
   
   // construct robot hierarchy
   static Node *build();
+  static std::vector<Node> nodeVector;
 };
