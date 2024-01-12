@@ -20,5 +20,5 @@ public:
   
   // construct robot hierarchy
   static Node *build();
-  static std::map<Node, int> nodeMap;
+  static std::map<int, Node> nodeMap;
 };

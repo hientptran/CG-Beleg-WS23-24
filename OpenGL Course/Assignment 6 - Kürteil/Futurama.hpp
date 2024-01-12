@@ -32,7 +32,7 @@ public:
   static void init();
   
   // add a scenegraph
-  static void addSceneGraph(SceneGraph *sceneGraph, std::map<Node, int> nodeMap);
+  static void addSceneGraph(SceneGraph *sceneGraph, std::map<int, Node> nodeMap);
 
   // display scene
   static void display(void);
@@ -84,7 +84,7 @@ private:
   static glm::mat4 viewMatrix;
 
   static LightSource lightSource;
-  static std::map<Node, int> nodeMap;
+  static std::map<int, Node> nodeMap;
   
   struct Menu{
     enum Item{QUIT,

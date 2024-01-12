@@ -86,7 +86,13 @@ void SceneGraph::traverse(Node *node, mat4 modelMatrix){
 	// Aufgabe 6: recursion anchor
 	if (node == NULL) return;	// 1) Abbruchbedingung
 
-	//int nodeID = find(nodeVector.begin(), nodeVector.end(), node);
+	int nodeID;
+	for (int i = 1; i < SceneGraph::nodeMap.size()+1; i++) {
+		cout << i << endl;
+	}
+
+	//int nodeID = nodeMap.at(node);
+	//cout << nodeID << endl;
   
 	// Aufgabe 6: traverse possible siblings		// 3) Objekt Transformieren
 	traverse(node->getNext(), modelMatrix);	// 2) Unveränderte Einheitsmatrix an Siblings verteilen
@@ -130,6 +136,6 @@ void SceneGraph::addLightSource(LightSource lightSource){
   this->lightSource= lightSource;
 }
 
-void SceneGraph::addNodeVector(std::map<Node, int> nodeVector) {
-	this->nodeVector = nodeVector;
+void SceneGraph::addnodeMap(std::map<int, Node> nodeMap) {
+	this->nodeMap = nodeMap;
 }
