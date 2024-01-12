@@ -91,7 +91,7 @@ static Node rightFoot(0, -1.75, 0,
 
 //static std::map<int, Node> nodeMap;
 //static std::vector<Node> nodeVector{torso, head, antenna, leftArm, rightArm, leftLeg, rightLeg, leftFoot, rightFoot};
-std::vector<Node> Robot::nodeVector;
+std::map<Node, int> Robot::nodeVector;
 
 // build the robot scenegraph
 Node *Robot::build(){
@@ -159,15 +159,35 @@ Node *Robot::build(){
   //nodeVector[7] = leftFoot;
   //nodeVector[8] = rightFoot;
 
-  nodeVector.push_back(torso);
-  nodeVector.push_back(head);
-  nodeVector.push_back(antenna);
-  nodeVector.push_back(leftArm);
-  nodeVector.push_back(rightArm);
-  nodeVector.push_back(leftLeg);
-  nodeVector.push_back(rightLeg);
-  nodeVector.push_back(leftFoot);
-  nodeVector.push_back(rightFoot);
+  //nodeVector.push_back(torso);
+  //nodeVector.push_back(head);
+  //nodeVector.push_back(antenna);
+  //nodeVector.push_back(leftArm);
+  //nodeVector.push_back(rightArm);
+  //nodeVector.push_back(leftLeg);
+  //nodeVector.push_back(rightLeg);
+  //nodeVector.push_back(leftFoot);
+  //nodeVector.push_back(rightFoot);
+
+  //nodeVector[torso] = 1;
+  //nodeVector[head] = 2;
+  //nodeVector[antenna] = 3;
+  //nodeVector[leftArm] = 4;
+  //nodeVector[rightArm] = 5;
+  //nodeVector[leftLeg] = 6;
+  //nodeVector[rightLeg] = 7;
+  //nodeVector[leftFoot] = 8;
+  //nodeVector[rightFoot] = 9;
+
+  nodeVector.insert({ torso, 1 });
+  nodeVector.insert({ head, 2 });
+  nodeVector.insert({ antenna, 3 });
+  nodeVector.insert({ leftArm, 4 });
+  nodeVector.insert({ rightArm, 5 });
+  nodeVector.insert({ leftLeg, 6 });
+  nodeVector.insert({ rightLeg, 7 });
+  nodeVector.insert({ leftFoot, 8 });
+  nodeVector.insert({ rightFoot, 9 });
 
   // return root node
   return &torso;

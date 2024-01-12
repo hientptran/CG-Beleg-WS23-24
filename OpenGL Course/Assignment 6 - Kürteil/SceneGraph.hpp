@@ -41,7 +41,7 @@ public:
   void setViewMatrix(glm::mat4 viewMatrix);
 
   void addLightSource(LightSource lightSource);
-  void addNodeVector(std::vector<Node> nodeVector);
+  void addNodeVector(std::map<Node, int> nodeVector);
   
 private:
 
@@ -65,5 +65,5 @@ private:
   glm::mat4 projectionMatrix, viewMatrix;
 
   LightSource lightSource;
-  std::vector<Node> nodeVector;
+  std::map<Node, int> nodeVector;
 };
