@@ -77,6 +77,12 @@
     <None Include="shaders\RGBCube\rgb-cube.vert">
       <Filter>Shaders</Filter>
     </None>
+    <None Include="picking.frag">
+      <Filter>Shaders</Filter>
+    </None>
+    <None Include="picking.vert">
+      <Filter>Shaders</Filter>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\Application.cpp">

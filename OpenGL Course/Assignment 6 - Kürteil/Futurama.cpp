@@ -22,6 +22,7 @@
 #define GLM_FORCE_RADIANS
 #include "glm/glm.hpp"
 #include "glm/gtc/matrix_transform.hpp"
+#include "shader.hpp"
 
 // use this with care
 // might cause name collisions
@@ -48,6 +49,11 @@ LightSource Futurama::lightSource={
 SceneGraph *Futurama::sceneGraph= NULL;
 bool Futurama::bender= false;
 
+// Create and compile our GLSL program from the shaders
+//GLuint programID = LoadShaders("StandardShading.vertexshader", "StandardShading.fragmentshader");
+//GLuint pickingProgramID = LoadShaders("Picking.vertexshader", "Picking.fragmentshader");
+glsl::Shader Futurama::pickingShader;
+
 const OpenGLApplication::Config Futurama::config(glm::uvec2(2, 1),
 						Config::Profile::COMPATIBILITY,
 						(Window::DOUBLE | Window::DEPTH | Window::RGB | Window::MULTISAMPLE),
@@ -72,6 +78,9 @@ void Futurama::init(){
   
   // enable antialiasing
   glEnable(GL_MULTISAMPLE);
+
+  pickingShader.loadVertexShader("Shaders/picking.vert");
+  pickingShader.loadFragmentShader("Shaders/picking.frag");
 }
 
 // add a scenegraph

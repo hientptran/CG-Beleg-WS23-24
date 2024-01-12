@@ -32,6 +32,8 @@
     <ClInclude Include="SceneGraph.hpp" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="picking.frag" />
+    <None Include="picking.vert" />
     <None Include="shaders\RGBCube\rgb-cube.frag" />
     <None Include="shaders\RGBCube\rgb-cube.vert" />
   </ItemGroup>

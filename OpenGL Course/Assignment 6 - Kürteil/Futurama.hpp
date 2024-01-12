@@ -53,6 +53,8 @@ public:
   static std::vector< std::pair< int, std::string > >  menuEntries;
 
   static const Config config;
+
+  static glsl::Shader pickingShader;
   
 private:
 
