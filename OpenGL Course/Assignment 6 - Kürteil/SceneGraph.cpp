@@ -85,15 +85,17 @@ void SceneGraph::traverse(Node *node, mat4 modelMatrix){
 
 	// Aufgabe 6: recursion anchor
 	if (node == NULL) return;	// 1) Abbruchbedingung
+
+	
   
 	// Aufgabe 6: traverse possible siblings		// 3) Objekt Transformieren
 	traverse(node->getNext(), modelMatrix);	// 2) Unveränderte Einheitsmatrix an Siblings verteilen
   
 	// render node and concatenate its transformation onto modelMatrix
-  node->render(projectionMatrix, viewMatrix, modelMatrix, lightSource);
+    node->render(projectionMatrix, viewMatrix, modelMatrix, lightSource);
 
-  // Aufgabe 6: traverse possible children		// 4) Transformierte Matrix an Children verteilen
-  traverse(node->getChild(), modelMatrix); //aber eigentlich neue Matrix übergeben
+    // Aufgabe 6: traverse possible children		// 4) Transformierte Matrix an Children verteilen
+    traverse(node->getChild(), modelMatrix); //aber eigentlich neue Matrix übergeben
 }
 
 void SceneGraph::clear(Node *node){
@@ -126,4 +128,8 @@ void SceneGraph::setViewMatrix(mat4 viewMatrix){
 
 void SceneGraph::addLightSource(LightSource lightSource){
   this->lightSource= lightSource;
+}
+
+void SceneGraph::addNodeVector(std::vector<Node> nodeVector) {
+	this->nodeVector = nodeVector;
 }

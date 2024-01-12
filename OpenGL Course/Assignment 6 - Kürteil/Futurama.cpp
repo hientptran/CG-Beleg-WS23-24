@@ -84,9 +84,10 @@ void Futurama::init(){
 }
 
 // add a scenegraph
-void Futurama::addSceneGraph(SceneGraph *sceneGraph){
+void Futurama::addSceneGraph(SceneGraph *sceneGraph, std::vector<Node> nodeVector){
   
   sceneGraph->addLightSource(lightSource);
+  sceneGraph->addNodeVector(nodeVector);
   Futurama::sceneGraph= sceneGraph;
 }
 
@@ -302,7 +303,7 @@ int main(int argc, char** argv){
   //make scenegraph
   SceneGraph *sceneGraph= new SceneGraph(root);
 
-  Futurama::addSceneGraph(sceneGraph);
+  Futurama::addSceneGraph(sceneGraph, nodeVector);
  
   //start event loop
   InputManager<Futurama>::startEventLoop();
