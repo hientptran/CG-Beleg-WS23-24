@@ -1,16 +1,8 @@
-﻿  Robot.cpp
-D:\IKG\4. Semester\Computergrafik\CG-Beleg-WS23-24\OpenGL Course\Assignment 6 - Kürteil\Robot.cpp(57,11): warning C4305: 'argument': truncation from 'double' to 'float'
-D:\IKG\4. Semester\Computergrafik\CG-Beleg-WS23-24\OpenGL Course\Assignment 6 - Kürteil\Robot.cpp(56,12): warning C4305: 'argument': truncation from 'double' to 'float'
-D:\IKG\4. Semester\Computergrafik\CG-Beleg-WS23-24\OpenGL Course\Assignment 6 - Kürteil\Robot.cpp(62,7): warning C4305: 'argument': truncation from 'double' to 'float'
-D:\IKG\4. Semester\Computergrafik\CG-Beleg-WS23-24\OpenGL Course\Assignment 6 - Kürteil\Robot.cpp(61,17): warning C4305: 'argument': truncation from 'double' to 'float'
-D:\IKG\4. Semester\Computergrafik\CG-Beleg-WS23-24\OpenGL Course\Assignment 6 - Kürteil\Robot.cpp(61,7): warning C4305: 'argument': truncation from 'double' to 'float'
-D:\IKG\4. Semester\Computergrafik\CG-Beleg-WS23-24\OpenGL Course\Assignment 6 - Kürteil\Robot.cpp(67,9): warning C4305: 'argument': truncation from 'double' to 'float'
-D:\IKG\4. Semester\Computergrafik\CG-Beleg-WS23-24\OpenGL Course\Assignment 6 - Kürteil\Robot.cpp(66,18): warning C4305: 'argument': truncation from 'double' to 'float'
-D:\IKG\4. Semester\Computergrafik\CG-Beleg-WS23-24\OpenGL Course\Assignment 6 - Kürteil\Robot.cpp(66,8): warning C4305: 'argument': truncation from 'double' to 'float'
-D:\IKG\4. Semester\Computergrafik\CG-Beleg-WS23-24\OpenGL Course\Assignment 6 - Kürteil\Robot.cpp(71,15): warning C4305: 'argument': truncation from 'double' to 'float'
-D:\IKG\4. Semester\Computergrafik\CG-Beleg-WS23-24\OpenGL Course\Assignment 6 - Kürteil\Robot.cpp(71,7): warning C4305: 'argument': truncation from 'double' to 'float'
-D:\IKG\4. Semester\Computergrafik\CG-Beleg-WS23-24\OpenGL Course\Assignment 6 - Kürteil\Robot.cpp(76,16): warning C4305: 'argument': truncation from 'double' to 'float'
-D:\IKG\4. Semester\Computergrafik\CG-Beleg-WS23-24\OpenGL Course\Assignment 6 - Kürteil\Robot.cpp(76,8): warning C4305: 'argument': truncation from 'double' to 'float'
-D:\IKG\4. Semester\Computergrafik\CG-Beleg-WS23-24\OpenGL Course\Assignment 6 - Kürteil\Robot.cpp(81,8): warning C4305: 'argument': truncation from 'double' to 'float'
-D:\IKG\4. Semester\Computergrafik\CG-Beleg-WS23-24\OpenGL Course\Assignment 6 - Kürteil\Robot.cpp(86,9): warning C4305: 'argument': truncation from 'double' to 'float'
+﻿  Futurama.cpp
+D:\IKG\4. Semester\Computergrafik\CG-Beleg-WS23-24\OpenGL Course\Assignment 6 - Kürteil\Futurama.cpp(161,49): warning C4244: 'argument': conversion from 'unsigned int' to 'float', possible loss of data
+D:\IKG\4. Semester\Computergrafik\CG-Beleg-WS23-24\OpenGL Course\Assignment 6 - Kürteil\Futurama.cpp(164,49): warning C4244: 'argument': conversion from 'unsigned int' to 'float', possible loss of data
+D:\IKG\4. Semester\Computergrafik\CG-Beleg-WS23-24\OpenGL Course\Assignment 6 - Kürteil\Futurama.cpp(216,31): warning C4305: '-=': truncation from 'double' to 'float'
+D:\IKG\4. Semester\Computergrafik\CG-Beleg-WS23-24\OpenGL Course\Assignment 6 - Kürteil\Futurama.cpp(222,17): warning C4305: '+=': truncation from 'double' to 'float'
+  SceneGraph.cpp
+  Generating Code...
   Futurama.vcxproj -> D:\IKG\4. Semester\Computergrafik\CG-Beleg-WS23-24\OpenGL Course\Assignment 6 - Kürteil\Debug\Futurama.exe
