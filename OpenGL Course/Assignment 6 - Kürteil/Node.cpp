@@ -19,6 +19,8 @@
 #include "glm/gtx/string_cast.hpp"
 //#include "glm/gtc/type_ptr.hpp"
 
+#include <tuple>
+
 // use this with care
 // might cause name collisions
 using namespace glm;
@@ -58,6 +60,13 @@ Node::Node(float x, float y, float z,
   shader= NULL;
   mesh= NULL;
   material= NULL;
+}
+
+bool Node::operator<(const Node& other) const
+{
+    if (position.x < other.position.x) return true;
+    if (position.x > other.position.x) return false;
+    return false;
 }
 
 void Node::setShader(glsl::Shader *shader){

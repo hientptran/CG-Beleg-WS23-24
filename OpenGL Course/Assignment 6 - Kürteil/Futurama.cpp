@@ -298,7 +298,7 @@ int main(int argc, char** argv){
   //  build the robot hierarchy (see robot.cpp)
   Node *root= Robot::build();
   std::map<Node, int> nodeVector = Robot::nodeVector;
-  cout << "Node count: " << nodeVector.size() << endl;
+  //cout << "Node count: " << nodeVector.size() << endl;
   
   //make scenegraph
   SceneGraph *sceneGraph= new SceneGraph(root);

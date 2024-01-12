@@ -179,15 +179,34 @@ Node *Robot::build(){
   //nodeVector[leftFoot] = 8;
   //nodeVector[rightFoot] = 9;
 
-  nodeVector.insert({ torso, 1 });
-  nodeVector.insert({ head, 2 });
-  nodeVector.insert({ antenna, 3 });
-  nodeVector.insert({ leftArm, 4 });
-  nodeVector.insert({ rightArm, 5 });
-  nodeVector.insert({ leftLeg, 6 });
-  nodeVector.insert({ rightLeg, 7 });
-  nodeVector.insert({ leftFoot, 8 });
-  nodeVector.insert({ rightFoot, 9 });
+  //nodeVector.insert({ head, 2 });
+  //nodeVector.insert({ antenna, 3 });
+  //nodeVector.insert({ leftArm, 4 });
+  //nodeVector.insert({ rightArm, 5 });
+  //nodeVector.insert({ leftLeg, 6 });
+  //nodeVector.insert({ rightLeg, 7 });
+  //nodeVector.insert({ leftFoot, 8 });
+  //nodeVector.insert({ rightFoot, 9 });
+
+  //nodeVector.insert(std::map<Node, int>::value_type(torso, 1));
+  //nodeVector.insert(std::map<Node, int>::value_type(head, 2 ));
+  //nodeVector.insert(std::map<Node, int>::value_type(antenna, 3 ));
+  //nodeVector.insert(std::map<Node, int>::value_type(leftArm, 4 ));
+  //nodeVector.insert(std::map<Node, int>::value_type(rightArm, 5 ));
+  //nodeVector.insert(std::map<Node, int>::value_type(leftLeg, 6 ));
+  //nodeVector.insert(std::map<Node, int>::value_type(rightLeg, 7 ));
+  //nodeVector.insert(std::map<Node, int>::value_type(leftFoot, 8 ));
+  //nodeVector.insert(std::map<Node, int>::value_type(rightFoot, 9 ));
+
+    nodeVector.emplace(torso, 1);
+	nodeVector.emplace(head, 2);
+	nodeVector.emplace(antenna, 3);
+	nodeVector.emplace(leftArm, 4);
+	nodeVector.emplace(rightArm,5);
+	nodeVector.emplace(leftLeg, 6);
+	nodeVector.emplace(rightLeg,7);
+	nodeVector.emplace(leftFoot,8);
+	nodeVector.emplace(rightFoot,9);
 
   // return root node
   return &torso;

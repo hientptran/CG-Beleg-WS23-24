@@ -1,4 +1,10 @@
-﻿  Robot.cpp
+﻿  Futurama.cpp
+D:\IKG\4. Semester\Computergrafik\CG-Beleg-WS23-24\OpenGL Course\Assignment 6 - Kürteil\Futurama.cpp(162,49): warning C4244: 'argument': conversion from 'unsigned int' to 'float', possible loss of data
+D:\IKG\4. Semester\Computergrafik\CG-Beleg-WS23-24\OpenGL Course\Assignment 6 - Kürteil\Futurama.cpp(165,49): warning C4244: 'argument': conversion from 'unsigned int' to 'float', possible loss of data
+D:\IKG\4. Semester\Computergrafik\CG-Beleg-WS23-24\OpenGL Course\Assignment 6 - Kürteil\Futurama.cpp(217,31): warning C4305: '-=': truncation from 'double' to 'float'
+D:\IKG\4. Semester\Computergrafik\CG-Beleg-WS23-24\OpenGL Course\Assignment 6 - Kürteil\Futurama.cpp(223,17): warning C4305: '+=': truncation from 'double' to 'float'
+  Node.cpp
+  Robot.cpp
 D:\IKG\4. Semester\Computergrafik\CG-Beleg-WS23-24\OpenGL Course\Assignment 6 - Kürteil\Robot.cpp(57,11): warning C4305: 'argument': truncation from 'double' to 'float'
 D:\IKG\4. Semester\Computergrafik\CG-Beleg-WS23-24\OpenGL Course\Assignment 6 - Kürteil\Robot.cpp(56,12): warning C4305: 'argument': truncation from 'double' to 'float'
 D:\IKG\4. Semester\Computergrafik\CG-Beleg-WS23-24\OpenGL Course\Assignment 6 - Kürteil\Robot.cpp(62,7): warning C4305: 'argument': truncation from 'double' to 'float'
@@ -13,153 +19,6 @@ D:\IKG\4. Semester\Computergrafik\CG-Beleg-WS23-24\OpenGL Course\Assignment 6 - 
 D:\IKG\4. Semester\Computergrafik\CG-Beleg-WS23-24\OpenGL Course\Assignment 6 - Kürteil\Robot.cpp(76,8): warning C4305: 'argument': truncation from 'double' to 'float'
 D:\IKG\4. Semester\Computergrafik\CG-Beleg-WS23-24\OpenGL Course\Assignment 6 - Kürteil\Robot.cpp(81,8): warning C4305: 'argument': truncation from 'double' to 'float'
 D:\IKG\4. Semester\Computergrafik\CG-Beleg-WS23-24\OpenGL Course\Assignment 6 - Kürteil\Robot.cpp(86,9): warning C4305: 'argument': truncation from 'double' to 'float'
-D:\Program Files (x86)\Visual Studio\VC\Tools\MSVC\14.37.32822\include\type_traits(2464,55): error C2676: binary '<': 'const _Ty' does not define this operator or a conversion to a type acceptable to the predefined operator
-          with
-          [
-              _Ty=Node
-          ]
-D:\Program Files (x86)\Visual Studio\VC\Tools\MSVC\14.37.32822\include\map(657,17): message : could be 'bool std::operator <(const std::multimap<_Kty,_Ty,_Pr,_Alloc> &,const std::multimap<_Kty,_Ty,_Pr,_Alloc> &)'
-D:\Program Files (x86)\Visual Studio\VC\Tools\MSVC\14.37.32822\include\type_traits(2464,49): message : 'bool std::operator <(const std::multimap<_Kty,_Ty,_Pr,_Alloc> &,const std::multimap<_Kty,_Ty,_Pr,_Alloc> &)': could not deduce template argument for 'const std::multimap<_Kty,_Ty,_Pr,_Alloc> &' from 'const _Ty'
-          with
-          [
-              _Ty=Node
-          ]
-D:\Program Files (x86)\Visual Studio\VC\Tools\MSVC\14.37.32822\include\map(422,17): message : or       'bool std::operator <(const std::map<_Kty,_Ty,_Pr,_Alloc> &,const std::map<_Kty,_Ty,_Pr,_Alloc> &)'
-D:\Program Files (x86)\Visual Studio\VC\Tools\MSVC\14.37.32822\include\type_traits(2464,49): message : 'bool std::operator <(const std::map<_Kty,_Ty,_Pr,_Alloc> &,const std::map<_Kty,_Ty,_Pr,_Alloc> &)': could not deduce template argument for 'const std::map<_Kty,_Ty,_Pr,_Alloc> &' from 'const _Ty'
-          with
-          [
-              _Ty=Node
-          ]
-D:\Program Files (x86)\Visual Studio\VC\Tools\MSVC\14.37.32822\include\memory(3589,30): message : or       'bool std::operator <(std::nullptr_t,const std::unique_ptr<_Ty,_Dx> &)'
-D:\Program Files (x86)\Visual Studio\VC\Tools\MSVC\14.37.32822\include\type_traits(2464,49): message : 'bool std::operator <(std::nullptr_t,const std::unique_ptr<_Ty,_Dx> &)': could not deduce template argument for 'const std::unique_ptr<_Ty,_Dx> &' from 'const _Ty'
-          with
-          [
-              _Ty=Node
-          ]
-D:\Program Files (x86)\Visual Studio\VC\Tools\MSVC\14.37.32822\include\memory(3583,30): message : or       'bool std::operator <(const std::unique_ptr<_Ty,_Dx> &,std::nullptr_t)'
-D:\Program Files (x86)\Visual Studio\VC\Tools\MSVC\14.37.32822\include\type_traits(2464,49): message : 'bool std::operator <(const std::unique_ptr<_Ty,_Dx> &,std::nullptr_t)': could not deduce template argument for 'const std::unique_ptr<_Ty,_Dx> &' from 'const _Ty'
-          with
-          [
-              _Ty=Node
-          ]
-D:\Program Files (x86)\Visual Studio\VC\Tools\MSVC\14.37.32822\include\memory(3525,17): message : or       'bool std::operator <(const std::unique_ptr<_Ty,_Dx> &,const std::unique_ptr<_Ty2,_Dx2> &)'
-D:\Program Files (x86)\Visual Studio\VC\Tools\MSVC\14.37.32822\include\type_traits(2464,49): message : 'bool std::operator <(const std::unique_ptr<_Ty,_Dx> &,const std::unique_ptr<_Ty2,_Dx2> &)': could not deduce template argument for 'const std::unique_ptr<_Ty,_Dx> &' from 'const _Ty'
-          with
-          [
-              _Ty=Node
-          ]
-D:\Program Files (x86)\Visual Studio\VC\Tools\MSVC\14.37.32822\include\memory(1952,17): message : or       'bool std::operator <(std::nullptr_t,const std::shared_ptr<_Ty> &) noexcept'
-D:\Program Files (x86)\Visual Studio\VC\Tools\MSVC\14.37.32822\include\type_traits(2464,49): message : 'bool std::operator <(std::nullptr_t,const std::shared_ptr<_Ty> &) noexcept': could not deduce template argument for 'const std::shared_ptr<_Ty> &' from 'const _Ty'
-          with
-          [
-              _Ty=Node
-          ]
-D:\Program Files (x86)\Visual Studio\VC\Tools\MSVC\14.37.32822\include\memory(1947,17): message : or       'bool std::operator <(const std::shared_ptr<_Ty> &,std::nullptr_t) noexcept'
-D:\Program Files (x86)\Visual Studio\VC\Tools\MSVC\14.37.32822\include\type_traits(2464,49): message : 'bool std::operator <(const std::shared_ptr<_Ty> &,std::nullptr_t) noexcept': could not deduce template argument for 'const std::shared_ptr<_Ty> &' from 'const _Ty'
-          with
-          [
-              _Ty=Node
-          ]
-D:\Program Files (x86)\Visual Studio\VC\Tools\MSVC\14.37.32822\include\memory(1900,17): message : or       'bool std::operator <(const std::shared_ptr<_Ty> &,const std::shared_ptr<_Ty0> &) noexcept'
-D:\Program Files (x86)\Visual Studio\VC\Tools\MSVC\14.37.32822\include\type_traits(2464,49): message : 'bool std::operator <(const std::shared_ptr<_Ty> &,const std::shared_ptr<_Ty0> &) noexcept': could not deduce template argument for 'const std::shared_ptr<_Ty> &' from 'const _Ty'
-          with
-          [
-              _Ty=Node
-          ]
-D:\Program Files (x86)\Visual Studio\VC\Tools\MSVC\14.37.32822\include\tuple(895,27): message : or       'bool std::operator <(const std::tuple<_Types...> &,const std::tuple<_Types...> &)'
-D:\Program Files (x86)\Visual Studio\VC\Tools\MSVC\14.37.32822\include\type_traits(2464,49): message : 'bool std::operator <(const std::tuple<_Types...> &,const std::tuple<_Types...> &)': could not deduce template argument for 'const std::tuple<_Types...> &' from 'const _Ty'
-          with
-          [
-              _Ty=Node
-          ]
-D:\Program Files (x86)\Visual Studio\VC\Tools\MSVC\14.37.32822\include\list(1896,17): message : or       'bool std::operator <(const std::list<_Ty,_Alloc> &,const std::list<_Ty,_Alloc> &)'
-D:\Program Files (x86)\Visual Studio\VC\Tools\MSVC\14.37.32822\include\type_traits(2464,49): message : 'bool std::operator <(const std::list<_Ty,_Alloc> &,const std::list<_Ty,_Alloc> &)': could not deduce template argument for 'const std::list<_Ty,_Alloc> &' from 'const _Ty'
-          with
-          [
-              _Ty=Node
-          ]
-D:\Program Files (x86)\Visual Studio\VC\Tools\MSVC\14.37.32822\include\vector(2310,30): message : or       'bool std::operator <(const std::vector<_Ty,_Alloc> &,const std::vector<_Ty,_Alloc> &)'
-D:\Program Files (x86)\Visual Studio\VC\Tools\MSVC\14.37.32822\include\type_traits(2464,49): message : 'bool std::operator <(const std::vector<_Ty,_Alloc> &,const std::vector<_Ty,_Alloc> &)': could not deduce template argument for 'const std::vector<_Ty,_Alloc> &' from 'const _Ty'
-          with
-          [
-              _Ty=Node
-          ]
-D:\Program Files (x86)\Visual Studio\VC\Tools\MSVC\14.37.32822\include\xstring(5066,17): message : or       'bool std::operator <(const std::basic_string<_Elem,_Traits,_Alloc> &,const _Elem *const )'
-D:\Program Files (x86)\Visual Studio\VC\Tools\MSVC\14.37.32822\include\type_traits(2464,49): message : 'bool std::operator <(const std::basic_string<_Elem,_Traits,_Alloc> &,const _Elem *const )': could not deduce template argument for 'const std::basic_string<_Elem,_Traits,_Alloc> &' from 'const _Ty'
-          with
-          [
-              _Ty=Node
-          ]
-D:\Program Files (x86)\Visual Studio\VC\Tools\MSVC\14.37.32822\include\xstring(5061,17): message : or       'bool std::operator <(const _Elem *const ,const std::basic_string<_Elem,_Traits,_Alloc> &)'
-D:\Program Files (x86)\Visual Studio\VC\Tools\MSVC\14.37.32822\include\type_traits(2464,49): message : 'bool std::operator <(const _Elem *const ,const std::basic_string<_Elem,_Traits,_Alloc> &)': could not deduce template argument for 'const _Elem *const ' from 'const _Ty'
-          with
-          [
-              _Ty=Node
-          ]
-D:\Program Files (x86)\Visual Studio\VC\Tools\MSVC\14.37.32822\include\xstring(5055,17): message : or       'bool std::operator <(const std::basic_string<_Elem,_Traits,_Alloc> &,const std::basic_string<_Elem,_Traits,_Alloc> &) noexcept'
-D:\Program Files (x86)\Visual Studio\VC\Tools\MSVC\14.37.32822\include\type_traits(2464,49): message : 'bool std::operator <(const std::basic_string<_Elem,_Traits,_Alloc> &,const std::basic_string<_Elem,_Traits,_Alloc> &) noexcept': could not deduce template argument for 'const std::basic_string<_Elem,_Traits,_Alloc> &' from 'const _Ty'
-          with
-          [
-              _Ty=Node
-          ]
-D:\Program Files (x86)\Visual Studio\VC\Tools\MSVC\14.37.32822\include\xutility(4287,5): message : or       'bool std::operator <(const std::move_iterator<_Iter> &,const std::move_iterator<_Iter2> &) noexcept(<expr>)'
-D:\Program Files (x86)\Visual Studio\VC\Tools\MSVC\14.37.32822\include\type_traits(2464,49): message : 'bool std::operator <(const std::move_iterator<_Iter> &,const std::move_iterator<_Iter2> &) noexcept(<expr>)': could not deduce template argument for 'const std::move_iterator<_Iter> &' from 'const _Ty'
-          with
-          [
-              _Ty=Node
-          ]
-D:\Program Files (x86)\Visual Studio\VC\Tools\MSVC\14.37.32822\include\xutility(1686,5): message : or       'bool std::operator <(const std::reverse_iterator<_BidIt> &,const std::reverse_iterator<_BidIt2> &) noexcept(<expr>)'
-D:\Program Files (x86)\Visual Studio\VC\Tools\MSVC\14.37.32822\include\type_traits(2464,49): message : 'bool std::operator <(const std::reverse_iterator<_BidIt> &,const std::reverse_iterator<_BidIt2> &) noexcept(<expr>)': could not deduce template argument for 'const std::reverse_iterator<_BidIt> &' from 'const _Ty'
-          with
-          [
-              _Ty=Node
-          ]
-D:\Program Files (x86)\Visual Studio\VC\Tools\MSVC\14.37.32822\include\utility(505,27): message : or       'bool std::operator <(const std::pair<_Ty1,_Ty2> &,const std::pair<_Uty1,_Uty2> &)'
-D:\Program Files (x86)\Visual Studio\VC\Tools\MSVC\14.37.32822\include\type_traits(2464,49): message : 'bool std::operator <(const std::pair<_Ty1,_Ty2> &,const std::pair<_Uty1,_Uty2> &)': could not deduce template argument for 'const std::pair<_Ty1,_Ty2> &' from 'const _Ty'
-          with
-          [
-              _Ty=Node
-          ]
-D:\Program Files (x86)\Visual Studio\VC\Tools\MSVC\14.37.32822\include\xtree(1617,17): message : see reference to function template instantiation 'bool std::_Debug_lt_pred<const std::less<Node>&,const _Kty&,const _Keyty&,0>(_Pr,_Ty1,_Ty2) noexcept(<expr>)' being compiled
-          with
-          [
-              _Kty=Node,
-              _Keyty=Node,
-              _Pr=const std::less<Node> &,
-              _Ty1=const Node &,
-              _Ty2=const Node &
-          ]
-D:\Program Files (x86)\Visual Studio\VC\Tools\MSVC\14.37.32822\include\xtree(1002,35): message : see reference to function template instantiation 'std::_Tree_find_result<std::_Tree_node<std::pair<const Node,int>,std::_Default_allocator_traits<_Alloc>::void_pointer> *> std::_Tree<std::_Tmap_traits<_Kty,_Ty,_Pr,_Alloc,false>>::_Find_lower_bound<_Key>(const _Keyty &) const' being compiled
-          with
-          [
-              _Alloc=std::allocator<std::pair<const Node,int>>,
-              _Kty=Node,
-              _Ty=int,
-              _Pr=std::less<Node>,
-              _Key=Node,
-              _Keyty=Node
-          ]
-D:\Program Files (x86)\Visual Studio\VC\Tools\MSVC\14.37.32822\include\xtree(1231,30): message : see reference to function template instantiation 'std::pair<std::_Tree_node<std::pair<const Node,int>,std::_Default_allocator_traits<_Alloc>::void_pointer> *,bool> std::_Tree<std::_Tmap_traits<_Kty,_Ty,_Pr,_Alloc,false>>::_Emplace<std::pair<const Node,int>>(std::pair<const Node,int> &&)' being compiled
-          with
-          [
-              _Alloc=std::allocator<std::pair<const Node,int>>,
-              _Kty=Node,
-              _Ty=int,
-              _Pr=std::less<Node>
-          ]
-D:\IKG\4. Semester\Computergrafik\CG-Beleg-WS23-24\OpenGL Course\Assignment 6 - Kürteil\Robot.cpp(182,13): message : see reference to function template instantiation 'std::pair<std::_Tree_iterator<std::_Tree_val<std::_Tree_simple_types<std::pair<const Node,int>>>>,bool> std::_Tree<std::_Tmap_traits<_Kty,_Ty,_Pr,_Alloc,false>>::insert<false,0>(std::pair<const Node,int> &&)' being compiled
-          with
-          [
-              _Kty=Node,
-              _Ty=int,
-              _Pr=std::less<Node>,
-              _Alloc=std::allocator<std::pair<const Node,int>>
-          ]
-D:\IKG\4. Semester\Computergrafik\CG-Beleg-WS23-24\OpenGL Course\Assignment 6 - Kürteil\Robot.cpp(182,20): message : see the first reference to 'std::_Tree<std::_Tmap_traits<_Kty,_Ty,_Pr,_Alloc,false>>::insert' in 'Robot::build'
-          with
-          [
-              _Kty=Node,
-              _Ty=int,
-              _Pr=std::less<Node>,
-              _Alloc=std::allocator<std::pair<const Node,int>>
-          ]
+  SceneGraph.cpp
+  Generating Code...
+  Futurama.vcxproj -> D:\IKG\4. Semester\Computergrafik\CG-Beleg-WS23-24\OpenGL Course\Assignment 6 - Kürteil\Debug\Futurama.exe

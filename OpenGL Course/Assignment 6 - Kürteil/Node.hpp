@@ -68,6 +68,8 @@ public:
        // rotation (in degrees) of node relative to parent node rotation
        float rotx, float roty, float rotz);
 
+  bool operator<(const Node& other) const;
+
   // destructor
   ~Node();
 
