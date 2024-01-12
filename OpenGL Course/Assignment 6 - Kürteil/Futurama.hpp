@@ -48,13 +48,15 @@ public:
 
   // keyboard callback for special keys 
   static void handleSpecialKeys();
+
+  // mouse released callback
+  static void mousePressed();
     
   // menu entries
   static std::vector< std::pair< int, std::string > >  menuEntries;
 
   static const Config config;
 
-  static glsl::Shader pickingShader;
   
 private:
 
@@ -82,6 +84,9 @@ private:
   static glm::mat4 projectionMatrix;
   static glm::mat4 orthographicProjectionMatrix;
   static glm::mat4 viewMatrix;
+
+
+  static glsl::Shader pickingShader;
 
   static LightSource lightSource;
   

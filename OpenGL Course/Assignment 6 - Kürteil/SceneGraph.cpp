@@ -41,6 +41,7 @@ void SceneGraph::traverse(mat4 modelView){
   traverse(root, modelView);
 }
 
+
 // reset all rotations in the scenegraph
 // nothing to do here
 // (see helper function)
@@ -95,6 +96,7 @@ void SceneGraph::traverse(Node *node, mat4 modelMatrix){
   // Aufgabe 6: traverse possible children		// 4) Transformierte Matrix an Children verteilen
   traverse(node->getChild(), modelMatrix); //aber eigentlich neue Matrix übergeben
 }
+
 
 void SceneGraph::clear(Node *node){
 
