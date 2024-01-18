@@ -287,9 +287,50 @@ void Futurama::handleSpecialKeys(){
 
 void Futurama::mousePressed() {
     cout << "mouse pressed " << "(" << Input::mouse.position.x << ", " << Input::mouse.position.y << ")" << endl;
-    //  build the robot hierarchy (see robot.cpp)
+    // Clear the screen in white
+    glClearColor(1.0f, 1.0f, 1.0f, 1.0f);
+    glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+    glUseProgram(pickingProgramID);
+
+    // Only the positions are needed (not the UVs and normals)
+    glEnableVertexAttribArray(0);
+
     // draw the scenegraph
     sceneGraph->traversePicking(mat4(1), nodeMap);
+    drawCameraParameters();
+    // display back buffer
+    Context::window->swapBuffers();
+
+    glDisableVertexAttribArray(0);
+
+    // Wait until all the pending drawing commands are really done.
+    // Ultra-mega-over slow ! 
+    // There are usually a long time between glDrawElements() and
+    // all the fragments completely rasterized.
+    glFlush();
+    glFinish();
+
+    glPixelStorei(GL_UNPACK_ALIGNMENT, 1);
+
+    // Read the pixel at the center of the screen.
+    // You can also use glfwGetMousePos().
+    // Ultra-mega-over slow too, even for 1 pixel, 
+    // because the framebuffer is on the GPU.
+    unsigned char data[4];
+    glReadPixels(Input::mouse.position.x, Input::mouse.position.y, 1, 1, GL_RGBA, GL_UNSIGNED_BYTE, data);
+
+    // Convert the color back to an integer ID
+    int pickedID =
+        data[0] +
+        data[1] * 256 +
+        data[2] * 256 * 256;
+
+    if (pickedID == 0x00ffffff) { // Full white, must be the background !
+        cout << "background"<< endl;
+    }
+    else {
+        cout << "id=" << pickedID;
+    }
 }
 
 vector< pair < int, string > > Futurama::menuEntries{{Menu::QUIT, "quit"},
