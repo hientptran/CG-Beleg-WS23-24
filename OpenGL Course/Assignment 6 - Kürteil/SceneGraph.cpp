@@ -99,6 +99,13 @@ void SceneGraph::traverse(Node *node, mat4 modelMatrix){
     traverse(node->getChild(), modelMatrix); //aber eigentlich neue Matrix übergeben
 }
 
+void SceneGraph::traversePicking(Node* node, glm::mat4 modelMatrix, std::map<int, Node> nodeMap) {
+	if (node == NULL) return;	
+	traverse(node->getNext(), modelMatrix);
+	node->render(projectionMatrix, viewMatrix, modelMatrix, lightSource);
+	traverse(node->getChild(), modelMatrix);
+}
+
 void SceneGraph::clear(Node *node){
 
   if(node == NULL) return;

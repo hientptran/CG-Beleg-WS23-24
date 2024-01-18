@@ -309,7 +309,7 @@ void Futurama::menu(int id){
   }
 }
 
-
+static std::map<int, Node> nodeMap;
 //GLuint pickingProgramID = LoadShaders("picking.vert", "picking.frag");
 // Get a handle for our "pickingColorID" uniform
 //GLuint pickingColorID = glGetUniformLocation(pickingProgramID, "PickingColor");
@@ -324,20 +324,8 @@ int main(int argc, char** argv){
 
   //  build the robot hierarchy (see robot.cpp)
   Node *root= Robot::build();
-  std::map<int, Node> nodeMap = Robot::nodeMap;
+  nodeMap = Robot::nodeMap;
   //cout << "Node count: " << nodeMap.size() << endl;
-
-  // Convert "i", the integer mesh ID, into an RGB color
-  for (int i = 1; i < nodeMap.size() + 1; i++) {
-      int r = (i & 0x000000FF) >> 0;
-      int g = (i & 0x0000FF00) >> 8;
-      int b = (i & 0x00FF0000) >> 16;
-
-      std::cout << "r:" << r << "g:" << g << "b:" << b << endl;
-
-      // OpenGL expects colors to be in [0,1], so divide by 255.
-      glUniform4f(pickingColorID, r / 255.0f, g / 255.0f, b / 255.0f, 1.0f);
-  }
 
   //make scenegraph
   SceneGraph *sceneGraph= new SceneGraph(root);

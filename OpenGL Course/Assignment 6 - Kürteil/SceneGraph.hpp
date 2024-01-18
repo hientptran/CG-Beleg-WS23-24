@@ -48,6 +48,9 @@ private:
   // traverse and draw the scenegraph from a given node
   void traverse(Node *node, glm::mat4 modelView);
 
+  // traverse and draw the scenegraph from a given node
+  void traversePicking(Node* node, glm::mat4 modelView, std::map<int, Node> nodeMap);
+
   // reset all rotations below given node
   void reset(Node *node);
 

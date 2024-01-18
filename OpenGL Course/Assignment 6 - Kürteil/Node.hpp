@@ -97,10 +97,14 @@ protected:
   // rotation, and rotation center
   // and call draw() methods
   void render(glm::mat4 projectionMatrix, glm::mat4 viewMatrix, glm::mat4 &modelMatrix, LightSource lightSource);
+
+  void renderPicking(glm::mat4 projectionMatrix, glm::mat4 viewMatrix, glm::mat4& modelMatrix, LightSource lightSource, glm::vec4 color);
   
   // draw an individual node
   void draw(glm::mat4 projectionMatrix, glm::mat4 viewMatrix, glm::mat4 modelMatrix, LightSource lightSource);
-  
+
+  void drawPicking(glm::mat4 projectionMatrix, glm::mat4 viewMatrix, glm::mat4 modelMatrix, LightSource lightSource, glm::vec4 color);
+
   // increment / decrement rotation
   void rotate(float x, float y, float z);
 

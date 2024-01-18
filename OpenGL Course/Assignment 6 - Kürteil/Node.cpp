@@ -130,6 +130,15 @@ void Node::render(mat4 projectionMatrix, mat4 viewMatrix, mat4 &modelMatrix, Lig
   draw(projectionMatrix, viewMatrix, modelMatrix*scalingMatrix, lightSource);
 }
 
+void Node::renderPicking(mat4 projectionMatrix, mat4 viewMatrix, mat4& modelMatrix, LightSource lightSource, vec4 color) {
+    modelMatrix *= translate(position);
+    modelMatrix *= translate(joint);
+    modelMatrix *= rotationMatrix;
+    modelMatrix *= glm::translate(-joint);
+    mat4 scalingMatrix = glm::scale(dimension);
+    drawPicking(projectionMatrix, viewMatrix, modelMatrix*scalingMatrix, lightSource, color);
+}
+
 // draw an individual node
 void Node::draw(mat4 projectionMatrix, mat4 viewMatrix, mat4 modelMatrix, LightSource lightSource){
   
@@ -152,6 +161,26 @@ void Node::draw(mat4 projectionMatrix, mat4 viewMatrix, mat4 modelMatrix, LightS
   mesh->draw();
   
   shader->unbind();
+}
+
+void Node::drawPicking(mat4 projectionMatrix, mat4 viewMatrix, mat4 modelMatrix, LightSource lightSource, vec4 color) {
+
+    glsl::Shader* shader = retrieveShader();
+    TriangleMesh* mesh = retrieveMesh();
+    Material* material = retrieveMaterial();
+
+    shader->bind();
+
+    shader->setUniform("transformation", projectionMatrix * viewMatrix * modelMatrix);
+    shader->setUniform("lightPosition", inverse(modelMatrix) * lightSource.position);
+
+    shader->setUniform("texturing", false);
+
+    shader->setUniform("color", color);
+
+    mesh->draw();
+
+    shader->unbind();
 }
 
 // increment / decrement rotation
