@@ -46,6 +46,9 @@ public:
   // keyboard callback
   static void keyPressed();
 
+  // mouse click callback
+  static void mousePressed();
+
   // keyboard callback for special keys 
   static void handleSpecialKeys();
     

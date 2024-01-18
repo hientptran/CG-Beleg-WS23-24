@@ -283,6 +283,11 @@ void Futurama::handleSpecialKeys(){
   }
 }
 
+void Futurama::mousePressed() {
+    cout << "mouse pressed " << "(" << Input::mouse.position.x << ", " << Input::mouse.position.y << ")" << endl;
+    
+}
+
 vector< pair < int, string > > Futurama::menuEntries{{Menu::QUIT, "quit"},
 						     {Menu::RESET, "reset"},
 						     {Menu::BENDER, "toggle [b]ender"}};
@@ -327,6 +332,8 @@ int main(int argc, char** argv){
       int r = (i & 0x000000FF) >> 0;
       int g = (i & 0x0000FF00) >> 8;
       int b = (i & 0x00FF0000) >> 16;
+
+      std::cout << "r:" << r << "g:" << g << "b:" << b << endl;
 
       // OpenGL expects colors to be in [0,1], so divide by 255.
       glUniform4f(pickingColorID, r / 255.0f, g / 255.0f, b / 255.0f, 1.0f);

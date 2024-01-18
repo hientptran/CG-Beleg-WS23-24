@@ -86,11 +86,6 @@ void SceneGraph::traverse(Node *node, mat4 modelMatrix){
 	// Aufgabe 6: recursion anchor
 	if (node == NULL) return;	// 1) Abbruchbedingung
 
-	int nodeID;
-	for (int i = 1; i < SceneGraph::nodeMap.size()+1; i++) {
-		cout << i << endl;
-	}
-
 	//int nodeID = nodeMap.at(node);
 	//cout << nodeID << endl;
   
