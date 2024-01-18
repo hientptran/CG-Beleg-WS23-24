@@ -69,6 +69,7 @@ public:
        float rotx, float roty, float rotz);
 
   bool operator<(const Node& other) const;
+  bool operator==(const Node& other) const;
 
   // destructor
   ~Node();

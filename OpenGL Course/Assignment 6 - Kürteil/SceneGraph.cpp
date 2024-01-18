@@ -28,6 +28,7 @@ SceneGraph::SceneGraph(Node *root) : root(root)
   selected->select();
 }
 
+
 SceneGraph::~SceneGraph(){
 
   clear(root);
@@ -39,6 +40,11 @@ SceneGraph::~SceneGraph(){
 void SceneGraph::traverse(mat4 modelView){
  
   traverse(root, modelView);
+}
+
+void SceneGraph::traversePicking(mat4 modelView, std::map<int, Node> nodeMap) {
+
+	traversePicking(root, modelView, nodeMap);
 }
 
 // reset all rotations in the scenegraph
@@ -85,9 +91,6 @@ void SceneGraph::traverse(Node *node, mat4 modelMatrix){
 
 	// Aufgabe 6: recursion anchor
 	if (node == NULL) return;	// 1) Abbruchbedingung
-
-	//int nodeID = nodeMap.at(node);
-	//cout << nodeID << endl;
   
 	// Aufgabe 6: traverse possible siblings		// 3) Objekt Transformieren
 	traverse(node->getNext(), modelMatrix);	// 2) Unveränderte Einheitsmatrix an Siblings verteilen
@@ -100,10 +103,22 @@ void SceneGraph::traverse(Node *node, mat4 modelMatrix){
 }
 
 void SceneGraph::traversePicking(Node* node, glm::mat4 modelMatrix, std::map<int, Node> nodeMap) {
-	if (node == NULL) return;	
-	traverse(node->getNext(), modelMatrix);
-	node->render(projectionMatrix, viewMatrix, modelMatrix, lightSource);
-	traverse(node->getChild(), modelMatrix);
+	
+	//if (node == NULL) return;	
+	//traverse(node->getNext(), modelMatrix);
+	//vec4 color;
+	////for (int i = 0; i < nodeMap.size(); i++) {
+	////	color = vec4(1.0f, 1.0f, 1.0f, 1.0f);
+	////	//if (nodeMap.at(i) == *node) {
+	////	//	int r = (i & 0x000000FF) >> 0;
+	////	//	int g = (i & 0x0000FF00) >> 8;
+	////	//	int b = (i & 0x00FF0000) >> 16;
+	////	//	std::cout << "r:" << r << "g:" << g << "b:" << b << endl;
+	////	//	color = vec4(r / 255.0f, g / 255.0f, b / 255.0f, 1.0f);
+	////	//}
+	////}
+	//node->renderPicking(projectionMatrix, viewMatrix, modelMatrix, lightSource, color);
+	//traverse(node->getChild(), modelMatrix);
 }
 
 void SceneGraph::clear(Node *node){

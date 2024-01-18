@@ -49,6 +49,8 @@ LightSource Futurama::lightSource={
   glm::vec4(1.0, 1.0, 1.0, 1.0),
 };
 
+std::map<int, Node> Futurama::nodeMap;
+
 SceneGraph *Futurama::sceneGraph= NULL;
 bool Futurama::bender= false;
 
@@ -285,7 +287,9 @@ void Futurama::handleSpecialKeys(){
 
 void Futurama::mousePressed() {
     cout << "mouse pressed " << "(" << Input::mouse.position.x << ", " << Input::mouse.position.y << ")" << endl;
-    
+    //  build the robot hierarchy (see robot.cpp)
+    // draw the scenegraph
+    sceneGraph->traversePicking(mat4(1), nodeMap);
 }
 
 vector< pair < int, string > > Futurama::menuEntries{{Menu::QUIT, "quit"},
@@ -309,10 +313,6 @@ void Futurama::menu(int id){
   }
 }
 
-static std::map<int, Node> nodeMap;
-//GLuint pickingProgramID = LoadShaders("picking.vert", "picking.frag");
-// Get a handle for our "pickingColorID" uniform
-//GLuint pickingColorID = glGetUniformLocation(pickingProgramID, "PickingColor");
 
 int main(int argc, char** argv){
 
@@ -324,7 +324,7 @@ int main(int argc, char** argv){
 
   //  build the robot hierarchy (see robot.cpp)
   Node *root= Robot::build();
-  nodeMap = Robot::nodeMap;
+  std::map<int, Node> nodeMap = Robot::nodeMap;
   //cout << "Node count: " << nodeMap.size() << endl;
 
   //make scenegraph

@@ -69,6 +69,14 @@ bool Node::operator<(const Node& other) const
     return false;
 }
 
+bool Node::operator==(const Node& other) const
+{
+    if ((position[0] == other.position[0]) && (position[1] == other.position[1]) && (position[2] == other.position[2]) &&
+        (dimension[0] == other.dimension[0]) && (dimension[1] == other.dimension[1]) && (dimension[2] == other.dimension[2]) &&
+        (joint[0] == other.joint[0]) && (joint[1] == other.joint[1]) && (joint[2] == other.joint[2])) return true;
+    else return false;
+}
+
 void Node::setShader(glsl::Shader *shader){
   this->shader= shader;
 }

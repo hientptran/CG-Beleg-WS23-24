@@ -24,6 +24,8 @@ public:
   // traverse and draw the scenegraph
   void traverse(glm::mat4 modelView);
 
+  void traversePicking(glm::mat4 modelView, std::map<int, Node> nodeMap);
+
   // navigation in tree
   // (needed for node selection)
   void up();
@@ -49,7 +51,7 @@ private:
   void traverse(Node *node, glm::mat4 modelView);
 
   // traverse and draw the scenegraph from a given node
-  void traversePicking(Node* node, glm::mat4 modelView, std::map<int, Node> nodeMap);
+  void traversePicking(Node* node, glm::mat4 modelView,  std::map<int, Node> nodeMap);
 
   // reset all rotations below given node
   void reset(Node *node);
