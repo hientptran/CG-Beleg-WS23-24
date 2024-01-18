@@ -24,6 +24,9 @@
 #include "glm/gtc/matrix_transform.hpp"
 #include "shader.hpp"
 
+   // Include GLEW
+#include <GL/glew.h>
+
 // use this with care
 // might cause name collisions
 using namespace glm;
@@ -62,22 +65,36 @@ const OpenGLApplication::Config Futurama::config(glm::uvec2(2, 1),
 						uvec2(512, 512),
 						"Computer Graphics Assignment 2 - Futurama");
 
+GLuint pickingProgramID;
+GLuint pickingColorID;
+
 void Futurama::init(){
+    GLenum err = glewInit();
+    if (GLEW_OK != err)
+    {
+        /* Problem: glewInit failed, something is seriously wrong. */
+        std::cerr << "Error: " << glewGetErrorString(err) << std::endl;
+    }
+    std::cerr << "Status: Using GLEW " << glewGetString(GLEW_VERSION) << std::endl;
+
+    pickingProgramID = LoadShaders("picking.vert", "picking.frag");
+    // Get a handle for our "pickingColorID" uniform
+    pickingColorID = glGetUniformLocation(pickingProgramID, "PickingColor");
   
-  // set background color to black
-  //  glClearColor(0.718,0.808,0.857,1.0);
-  glClearColor(0,0,0,1.0);
-  glPolygonMode(GL_FRONT, GL_FILL);
+    // set background color to black
+    //  glClearColor(0.718,0.808,0.857,1.0);
+    glClearColor(0,0,0,1.0);
+    glPolygonMode(GL_FRONT, GL_FILL);
   
-  // enable depth test (z-buffer)
-  glDepthFunc(GL_LESS);
-  glEnable(GL_DEPTH_TEST);
+    // enable depth test (z-buffer)
+    glDepthFunc(GL_LESS);
+    glEnable(GL_DEPTH_TEST);
   
-  glEnable(GL_TEXTURE_2D);
-  glEnable(GL_TEXTURE0);
+    glEnable(GL_TEXTURE_2D);
+    glEnable(GL_TEXTURE0);
   
-  // enable antialiasing
-  glEnable(GL_MULTISAMPLE);
+    // enable antialiasing
+    glEnable(GL_MULTISAMPLE);
 
   //pickingShader.loadVertexShader("Shaders/picking.vert");
   //pickingShader.loadFragmentShader("Shaders/picking.frag");
@@ -287,6 +304,11 @@ void Futurama::menu(int id){
   }
 }
 
+
+//GLuint pickingProgramID = LoadShaders("picking.vert", "picking.frag");
+// Get a handle for our "pickingColorID" uniform
+//GLuint pickingColorID = glGetUniformLocation(pickingProgramID, "PickingColor");
+
 int main(int argc, char** argv){
 
   // initialize OpenGL context
@@ -294,12 +316,22 @@ int main(int argc, char** argv){
 
   // some diagnostic output
   std::cout << "GPU: " << glGetString(GL_RENDERER) << ", OpenGL version: " << glGetString(GL_VERSION) << ", GLSL version: " << glGetString(GL_SHADING_LANGUAGE_VERSION) << std::endl;
-  
+
   //  build the robot hierarchy (see robot.cpp)
   Node *root= Robot::build();
   std::map<int, Node> nodeMap = Robot::nodeMap;
   //cout << "Node count: " << nodeMap.size() << endl;
-  
+
+  // Convert "i", the integer mesh ID, into an RGB color
+  for (int i = 1; i < nodeMap.size() + 1; i++) {
+      int r = (i & 0x000000FF) >> 0;
+      int g = (i & 0x0000FF00) >> 8;
+      int b = (i & 0x00FF0000) >> 16;
+
+      // OpenGL expects colors to be in [0,1], so divide by 255.
+      glUniform4f(pickingColorID, r / 255.0f, g / 255.0f, b / 255.0f, 1.0f);
+  }
+
   //make scenegraph
   SceneGraph *sceneGraph= new SceneGraph(root);
 

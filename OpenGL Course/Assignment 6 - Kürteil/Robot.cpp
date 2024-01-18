@@ -29,6 +29,7 @@ static Material metal= {
 };
 
 static glsl::Shader toonShader;
+static glsl::Shader pickingShader;
 
 //      CURRENTLY ONLY TORSO. INSERT OTHER BODY PARTS HERE.
 //      SEE EXAMPLE BINARY Futurama_ref_windows.exe / Futurama_ref_macos / Futurama_ref_linux
@@ -124,6 +125,17 @@ Node *Robot::build(){
   toonShader.bindVertexAttrib("normal", TriangleMesh::attribNormal);
   toonShader.bindVertexAttrib("texCoord", TriangleMesh::attribTexCoord);
   toonShader.link();
+
+  //pickingShader.addVertexShader(version);
+  //pickingShader.loadVertexShader("shaders/picking.vert");
+  //pickingShader.compileVertexShader();
+  //pickingShader.addFragmentShader(version);
+  //pickingShader.loadFragmentShader("shaders/picking.frag");
+  //pickingShader.compileFragmentShader();
+  //toonShader.bindVertexAttrib("position", TriangleMesh::attribPosition);
+  //toonShader.bindVertexAttrib("normal", TriangleMesh::attribNormal);
+  //toonShader.bindVertexAttrib("texCoord", TriangleMesh::attribTexCoord);
+  //pickingShader.link();
   
   // You dont't have to repeat this for every node.
   // These properties are inherited
