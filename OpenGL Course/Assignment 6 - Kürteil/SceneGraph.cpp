@@ -42,7 +42,7 @@ void SceneGraph::traverse(mat4 modelView){
   traverse(root, modelView);
 }
 
-std::map<int, Node> SceneGraph::nodeMap;
+//std::map<int, Node> SceneGraph::nodeMap;
 void SceneGraph::traversePicking(mat4 modelView) {
 
 	traversePicking(root, modelView);
@@ -108,20 +108,28 @@ void SceneGraph::traversePicking(Node *node, glm::mat4 modelMatrix) {
 	//node = *node.getNext();
 	traversePicking(node->getNext(), modelMatrix);
 	vec4 color = vec4(0.0f, 0.0f, 0.0f, 0.0f);
-	for (int i = 0; i < nodeMap.size(); i++) {
+	int r = 0;
+	int g = 0;
+	int b = 0;
+	//cout << nodeMap.size() << endl;
+	for (int i = 1; i <= nodeMap.size(); i++) {
 		//cout << i << endl;
-		color = vec4(1.0f, 1.0f, 1.0f, 1.0f);
+		color = vec4(0.0f, 0.0f, 0.0f, 0.0f);
 		if (nodeMap.at(i) == *node) {
 			// Convert "i", the integer mesh ID, into an RGB color
-			int r = (i & 0x000000FF) >> 0;
-			int g = (i & 0x0000FF00) >> 8;
-			int b = (i & 0x00FF0000) >> 16;
+			r = (i & 0x000000FF) >> 0;
+			g = (i & 0x0000FF00) >> 8;
+			b = (i & 0x00FF0000) >> 16;
 			//std::cout << "r:" << r << "g:" << g << "b:" << b << endl;
+			//cout << i << endl;
+			//color = vec4(r, g, b, 1.0f);
+			cout << r / 255.0f << ", " << g / 255.0f << ", " << b / 255.0f << endl;
 			color = vec4(r / 255.0f, g / 255.0f, b / 255.0f, 1.0f);
+			node->renderPicking(projectionMatrix, viewMatrix, modelMatrix, lightSource, color);
 			break;
-		}
+		} 
 	}
-	node->renderPicking(projectionMatrix, viewMatrix, modelMatrix, lightSource, color);
+	
 	traversePicking(node->getChild(), modelMatrix);
 }
 

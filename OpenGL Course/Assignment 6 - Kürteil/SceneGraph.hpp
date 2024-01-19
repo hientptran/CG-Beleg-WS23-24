@@ -72,5 +72,5 @@ private:
   glm::mat4 projectionMatrix, viewMatrix;
 
   LightSource lightSource;
-  static std::map<int, Node> nodeMap;
+  std::map<int, Node> nodeMap;
 };

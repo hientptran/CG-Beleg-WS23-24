@@ -98,7 +98,7 @@ void Futurama::init(){
 void Futurama::addSceneGraph(SceneGraph *sceneGraph){
   
   sceneGraph->addLightSource(lightSource);
-  sceneGraph->addnodeMap(nodeMap);
+  //sceneGraph->addnodeMap(nodeMap);
   Futurama::sceneGraph = sceneGraph;
 }
 
@@ -287,9 +287,9 @@ void Futurama::mousePressed() {
 
     //sceneGraph->addRootNode(node);
     sceneGraph->traversePicking(mat4(1));
-    //drawCameraParameters();
+    drawCameraParameters();
     // display back buffer
-    //Context::window->swapBuffers();
+    Context::window->swapBuffers();
 
     //glDisableVertexAttribArray(0);
     glFlush();
@@ -297,44 +297,36 @@ void Futurama::mousePressed() {
 
     glPixelStorei(GL_UNPACK_ALIGNMENT, 1);
     unsigned char data[4];
-    glReadPixels(Input::mouse.position.x, Input::mouse.position.y, 1, 1, GL_RGBA, GL_UNSIGNED_BYTE, data);
-    cout << data[0]/255.0f << ", " << data[1] / 255.0f << ", " << data[2] / 255.0f << endl;
+    glReadPixels(Input::mouse.position.x, Context::window->width()-Input::mouse.position.y, 1, 1, GL_RGBA, GL_UNSIGNED_BYTE, data);
+    cout << data[0]/255.0f << endl;
 
     // Convert the color back to an integer ID
-    int pickedID =
-        data[0] +
-        data[1] * 256 +
-        data[2] * 256 * 256;
-    cout << "pickedID=" << pickedID << endl;
-
-    if (pickedID == 0xffffffff) { // Full white, must be the background !
-        cout << "background" << endl;
-    }
-    else {
-        switch (pickedID) {
-            case 0: cout << "picked = torso" << endl;
-            case 1: cout << "picked = head" << endl;
-            case 2: cout << "picked = antenna" << endl;
-            case 3: cout << "picked = left arm" << endl;
-            case 4: cout << "picked = right arm" << endl;
-            case 5: cout << "picked = left leg" << endl;
-            case 6: cout << "picked = right leg" << endl;
-            case 7: cout << "picked = left foot" << endl;
-            case 8: cout << "picked = right foot" << endl;
-        }
+    int pickedID = data[0];
+    cout << "pickedID = " << pickedID << endl;
+    switch (pickedID) {
+        case 0: cout << "background" << endl; break;
+        case 1: cout << "picked = torso" << endl; break;
+        case 2: cout << "picked = head" << endl; break;
+        case 3: cout << "picked = left arm" << endl; break;
+        case 4: cout << "picked = right arm" << endl; break;
+        case 5: cout << "picked = left leg" << endl; break;
+        case 6: cout << "picked = right leg" << endl; break;
+        case 7: cout << "picked = left foot" << endl; break;
+        case 8: cout << "picked = right foot" << endl; break;
+        case 9: cout << "picked = antenna" << endl; break;
     }
 
-    // display normally
-    glClearColor(0.0f, 0.0f, 0.0f, 0.0f);
-    glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+    //// display normally
+    //glClearColor(0.0f, 0.0f, 0.0f, 0.0f);
+    //glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
-    // draw the scenegraph
-    sceneGraph->traverse(mat4(1));
+    //// draw the scenegraph
+    //sceneGraph->traverse(mat4(1));
 
-    drawCameraParameters();
+    //drawCameraParameters();
 
-    // display back buffer
-    Context::window->swapBuffers();
+    //// display back buffer
+    //Context::window->swapBuffers();
 }
 
 vector< pair < int, string > > Futurama::menuEntries{{Menu::QUIT, "quit"},

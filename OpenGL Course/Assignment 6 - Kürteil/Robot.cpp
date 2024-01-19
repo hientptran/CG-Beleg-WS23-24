@@ -160,15 +160,15 @@ Node *Robot::build(){
   rightFoot.setParent(&rightLeg);
   // ML schnapp
 
-	nodeMap.emplace(0,torso);
-	nodeMap.emplace(1,head);
-	nodeMap.emplace(2,antenna);
+	nodeMap.emplace(1,torso);
+	nodeMap.emplace(2,head);
 	nodeMap.emplace(3,leftArm);
 	nodeMap.emplace(4,rightArm);
 	nodeMap.emplace(5,leftLeg);
 	nodeMap.emplace(6,rightLeg);
 	nodeMap.emplace(7,leftFoot);
 	nodeMap.emplace(8,rightFoot);
+	nodeMap.emplace(9,antenna);
 
   // return root node
   return &torso;
