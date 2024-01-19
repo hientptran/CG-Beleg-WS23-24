@@ -77,6 +77,7 @@ public:
   void setShader(glsl::Shader *shader);
   void setMesh(TriangleMesh *mesh);
   void setMaterial(Material *material);
+  void setPickingShader(glsl::Shader* pickingShader);
   
   // sets the parent of this node
   void setParent(Node* parent);
@@ -85,10 +86,10 @@ protected:
   
   // retrieve inherited shader/mesh/material
   glsl::Shader *retrieveShader();
+  glsl::Shader* retrievePickingShader();
   TriangleMesh *retrieveMesh();
   Material *retrieveMaterial();
-  
-  void getMatrices(void);
+
   
   // scenegraph has access to protected functions
   friend class SceneGraph;
@@ -157,4 +158,5 @@ protected:
   TriangleMesh *mesh;
   Material *material;
   glsl::Shader *shader;
+  glsl::Shader *pickingShader;
 };

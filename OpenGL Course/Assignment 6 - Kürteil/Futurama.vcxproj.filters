@@ -69,6 +69,7 @@
     <ClInclude Include="SceneGraph.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="shader.hpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="shaders\RGBCube\rgb-cube.frag">
@@ -77,10 +78,16 @@
     <None Include="shaders\RGBCube\rgb-cube.vert">
       <Filter>Shaders</Filter>
     </None>
-    <None Include="picking.frag">
+    <None Include="shaders\picking.frag">
       <Filter>Shaders</Filter>
     </None>
-    <None Include="picking.vert">
+    <None Include="shaders\picking.vert">
+      <Filter>Shaders</Filter>
+    </None>
+    <None Include="shaders\toon.frag">
+      <Filter>Shaders</Filter>
+    </None>
+    <None Include="shaders\toon.vert">
       <Filter>Shaders</Filter>
     </None>
   </ItemGroup>
@@ -121,5 +128,6 @@
     <ClCompile Include="SceneGraph.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="shader.cpp" />
   </ItemGroup>
 </Project>

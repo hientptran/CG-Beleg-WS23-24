@@ -71,14 +71,14 @@ bool Node::operator<(const Node& other) const
 
 bool Node::operator==(const Node& other) const
 {
-    if ((position[0] == other.position[0]) && (position[1] == other.position[1]) && (position[2] == other.position[2]) &&
-        (dimension[0] == other.dimension[0]) && (dimension[1] == other.dimension[1]) && (dimension[2] == other.dimension[2]) &&
-        (joint[0] == other.joint[0]) && (joint[1] == other.joint[1]) && (joint[2] == other.joint[2])) return true;
+    if ((position.x == other.position.x) && (position.y == other.position.y) && (position.z == other.position.z) &&
+        (dimension.x == other.dimension.x) && (dimension.y == other.dimension.y) && (dimension.z == other.dimension.z) &&
+        (joint.x == other.joint.x) && (joint.x == other.joint.y) && (joint.z == other.joint.z)) return true;
     else return false;
 }
 
 void Node::setShader(glsl::Shader *shader){
-  this->shader= shader;
+  this->shader = shader;
 }
 
 void Node::setMesh(TriangleMesh *mesh){
@@ -87,6 +87,10 @@ void Node::setMesh(TriangleMesh *mesh){
 
 void Node::setMaterial(Material *material){
   this->material= material;
+}
+
+void Node::setPickingShader(glsl::Shader *pickingShader) {
+    this->pickingShader = pickingShader;
 }
 
 // destructor
@@ -173,22 +177,29 @@ void Node::draw(mat4 projectionMatrix, mat4 viewMatrix, mat4 modelMatrix, LightS
 
 void Node::drawPicking(mat4 projectionMatrix, mat4 viewMatrix, mat4 modelMatrix, LightSource lightSource, vec4 color) {
 
-    glsl::Shader* shader = retrieveShader();
+    //glsl::Shader* shader = retrieveShader();
+    glsl::Shader* pickingShader = retrievePickingShader();
     TriangleMesh* mesh = retrieveMesh();
-    Material* material = retrieveMaterial();
 
-    shader->bind();
+    //shader->bind();
 
-    shader->setUniform("transformation", projectionMatrix * viewMatrix * modelMatrix);
-    shader->setUniform("lightPosition", inverse(modelMatrix) * lightSource.position);
+    //shader->setUniform("transformation", projectionMatrix * viewMatrix * modelMatrix);
+    //shader->setUniform("lightPosition", inverse(modelMatrix) * lightSource.position);
 
-    shader->setUniform("texturing", false);
+    //shader->setUniform("texturing", false);
 
-    shader->setUniform("color", color);
+    //shader->setUniform("color", color);
+
+    /////////
+    pickingShader->bind();
+    pickingShader->setUniform("transformation", projectionMatrix * viewMatrix * modelMatrix);
+    pickingShader->setUniform("PickingColor", color);
+    /////////
 
     mesh->draw();
 
-    shader->unbind();
+    //shader->unbind();
+    pickingShader->unbind();
 }
 
 // increment / decrement rotation
@@ -204,6 +215,12 @@ glsl::Shader *Node::retrieveShader(){
   Node* node= this;
   while(!node->shader) node= node->getParent();
   return node->shader;
+}
+
+glsl::Shader* Node::retrievePickingShader() {
+    Node* node = this;
+    while (!node->pickingShader) node = node->getParent();
+    return node->pickingShader;
 }
 
 // retrieve inherited mesh

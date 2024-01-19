@@ -1,6 +1,2 @@
-﻿  Futurama.cpp
-D:\IKG\4. Semester\Computergrafik\CG-Beleg-WS23-24\OpenGL Course\Assignment 6 - Kürteil\Futurama.cpp(181,49): warning C4244: 'argument': conversion from 'unsigned int' to 'float', possible loss of data
-D:\IKG\4. Semester\Computergrafik\CG-Beleg-WS23-24\OpenGL Course\Assignment 6 - Kürteil\Futurama.cpp(184,49): warning C4244: 'argument': conversion from 'unsigned int' to 'float', possible loss of data
-D:\IKG\4. Semester\Computergrafik\CG-Beleg-WS23-24\OpenGL Course\Assignment 6 - Kürteil\Futurama.cpp(236,31): warning C4305: '-=': truncation from 'double' to 'float'
-D:\IKG\4. Semester\Computergrafik\CG-Beleg-WS23-24\OpenGL Course\Assignment 6 - Kürteil\Futurama.cpp(242,17): warning C4305: '+=': truncation from 'double' to 'float'
+﻿  Node.cpp
   Futurama.vcxproj -> D:\IKG\4. Semester\Computergrafik\CG-Beleg-WS23-24\OpenGL Course\Assignment 6 - Kürteil\Debug\Futurama.exe

@@ -24,7 +24,7 @@ public:
   // traverse and draw the scenegraph
   void traverse(glm::mat4 modelView);
 
-  void traversePicking(glm::mat4 modelView, std::map<int, Node> nodeMap);
+  void traversePicking(glm::mat4 modelView);
 
   // navigation in tree
   // (needed for node selection)
@@ -44,6 +44,7 @@ public:
 
   void addLightSource(LightSource lightSource);
   void addnodeMap(std::map<int, Node> nodeMap);
+  void addRootNode(Node *node);
   
 private:
 
@@ -51,7 +52,7 @@ private:
   void traverse(Node *node, glm::mat4 modelView);
 
   // traverse and draw the scenegraph from a given node
-  void traversePicking(Node* node, glm::mat4 modelView,  std::map<int, Node> nodeMap);
+  void traversePicking(Node *node, glm::mat4 modelView);
 
   // reset all rotations below given node
   void reset(Node *node);
@@ -60,15 +61,16 @@ private:
   void clear(Node *node);
 
   // root node
-  Node *root; 
+  Node* root;
+  Node* rootNode;
 
   // currently selected node
   Node *selected;
 
-    glsl::Shader *shader;
+  //glsl::Shader *shader;
 
   glm::mat4 projectionMatrix, viewMatrix;
 
   LightSource lightSource;
-  std::map<int, Node> nodeMap;
+  static std::map<int, Node> nodeMap;
 };

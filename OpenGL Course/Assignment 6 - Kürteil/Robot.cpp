@@ -102,7 +102,7 @@ Node *Robot::build(){
 
   // shader
 
-  const std::string version= "#version 120\n";
+  const std::string version= "#version 130\n";
   /*
   diffuseShader.addVertexShader(version);
   diffuseShader.loadVertexShader("shaders/diffuse.vert");
@@ -126,23 +126,22 @@ Node *Robot::build(){
   toonShader.bindVertexAttrib("texCoord", TriangleMesh::attribTexCoord);
   toonShader.link();
 
-  //pickingShader.addVertexShader(version);
-  //pickingShader.loadVertexShader("shaders/picking.vert");
-  //pickingShader.compileVertexShader();
-  //pickingShader.addFragmentShader(version);
-  //pickingShader.loadFragmentShader("shaders/picking.frag");
-  //pickingShader.compileFragmentShader();
-  //toonShader.bindVertexAttrib("position", TriangleMesh::attribPosition);
-  //toonShader.bindVertexAttrib("normal", TriangleMesh::attribNormal);
-  //toonShader.bindVertexAttrib("texCoord", TriangleMesh::attribTexCoord);
-  //pickingShader.link();
+  pickingShader.addVertexShader(version);
+  pickingShader.loadVertexShader("shaders/picking.vert");
+  pickingShader.compileVertexShader();
+  pickingShader.addFragmentShader(version);
+  pickingShader.loadFragmentShader("shaders/picking.frag");
+  pickingShader.compileFragmentShader();
+  pickingShader.bindVertexAttrib("position", TriangleMesh::attribPosition);
+  pickingShader.link();
   
   // You dont't have to repeat this for every node.
   // These properties are inherited
   torso.setMesh(&cube);
   torso.setMaterial(&metal);
+  torso.setPickingShader(&pickingShader);
   torso.setShader(&toonShader);
-    
+  
   // TODO: finally, attach the robot/model parts  
 
   // Schwerpunkt (Position des Objekts)
@@ -161,74 +160,15 @@ Node *Robot::build(){
   rightFoot.setParent(&rightLeg);
   // ML schnapp
 
-  //nodeMap[0] = torso;
-  //nodeMap[1] = head;
-  //nodeMap[2] = antenna;
-  //nodeMap[3] = leftArm;
-  //nodeMap[4] = rightArm;
-  //nodeMap[5] = leftLeg;
-  //nodeMap[6] = rightLeg;
-  //nodeMap[7] = leftFoot;
-  //nodeMap[8] = rightFoot;
-
-  //nodeMap.push_back(torso);
-  //nodeMap.push_back(head);
-  //nodeMap.push_back(antenna);
-  //nodeMap.push_back(leftArm);
-  //nodeMap.push_back(rightArm);
-  //nodeMap.push_back(leftLeg);
-  //nodeMap.push_back(rightLeg);
-  //nodeMap.push_back(leftFoot);
-  //nodeMap.push_back(rightFoot);
-
-  //nodeMap[torso] = 1;
-  //nodeMap[head] = 2;
-  //nodeMap[antenna] = 3;
-  //nodeMap[leftArm] = 4;
-  //nodeMap[rightArm] = 5;
-  //nodeMap[leftLeg] = 6;
-  //nodeMap[rightLeg] = 7;
-  //nodeMap[leftFoot] = 8;
-  //nodeMap[rightFoot] = 9;
-
-  //nodeMap.insert({ head, 2 });
-  //nodeMap.insert({ antenna, 3 });
-  //nodeMap.insert({ leftArm, 4 });
-  //nodeMap.insert({ rightArm, 5 });
-  //nodeMap.insert({ leftLeg, 6 });
-  //nodeMap.insert({ rightLeg, 7 });
-  //nodeMap.insert({ leftFoot, 8 });
-  //nodeMap.insert({ rightFoot, 9 });
-
-  //nodeMap.insert(std::map<int, Node>::value_type(torso, 1));
-  //nodeMap.insert(std::map<int, Node>::value_type(head, 2 ));
-  //nodeMap.insert(std::map<int, Node>::value_type(antenna, 3 ));
-  //nodeMap.insert(std::map<int, Node>::value_type(leftArm, 4 ));
-  //nodeMap.insert(std::map<int, Node>::value_type(rightArm, 5 ));
-  //nodeMap.insert(std::map<int, Node>::value_type(leftLeg, 6 ));
-  //nodeMap.insert(std::map<int, Node>::value_type(rightLeg, 7 ));
-  //nodeMap.insert(std::map<int, Node>::value_type(leftFoot, 8 ));
-  //nodeMap.insert(std::map<int, Node>::value_type(rightFoot, 9 ));
-
- //   nodeMap.emplace(torso, 1);
-	//nodeMap.emplace(head, 2);
-	//nodeMap.emplace(antenna, 3);
-	//nodeMap.emplace(leftArm, 4);
-	//nodeMap.emplace(rightArm,5);
-	//nodeMap.emplace(leftLeg, 6);
-	//nodeMap.emplace(rightLeg,7);
-	//nodeMap.emplace(leftFoot,8);
-	//nodeMap.emplace(rightFoot,9);
-
-	  nodeMap.emplace(1,torso);
-	  nodeMap.emplace(2,head);
-	  nodeMap.emplace(3,antenna);
-	  nodeMap.emplace(4,leftArm);
-	  nodeMap.emplace(5,rightArm);
-	  nodeMap.emplace(6,leftLeg);
-	  nodeMap.emplace(7,rightLeg);
-	  nodeMap.emplace(8,leftFoot);
-	  nodeMap.emplace(9,rightFoot);
+	nodeMap.emplace(0,torso);
+	nodeMap.emplace(1,head);
+	nodeMap.emplace(2,antenna);
+	nodeMap.emplace(3,leftArm);
+	nodeMap.emplace(4,rightArm);
+	nodeMap.emplace(5,leftLeg);
+	nodeMap.emplace(6,rightLeg);
+	nodeMap.emplace(7,leftFoot);
+	nodeMap.emplace(8,rightFoot);
 
   // return root node
   return &torso;

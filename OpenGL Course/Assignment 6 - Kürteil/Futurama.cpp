@@ -50,6 +50,7 @@ LightSource Futurama::lightSource={
 };
 
 std::map<int, Node> Futurama::nodeMap;
+Node *Futurama::node = NULL;
 
 SceneGraph *Futurama::sceneGraph= NULL;
 bool Futurama::bender= false;
@@ -67,8 +68,6 @@ const OpenGLApplication::Config Futurama::config(glm::uvec2(2, 1),
 						uvec2(512, 512),
 						"Computer Graphics Assignment 2 - Futurama");
 
-GLuint pickingProgramID;
-GLuint pickingColorID;
 
 void Futurama::init(){
     GLenum err = glewInit();
@@ -79,10 +78,6 @@ void Futurama::init(){
     }
     std::cerr << "Status: Using GLEW " << glewGetString(GLEW_VERSION) << std::endl;
 
-    pickingProgramID = LoadShaders("picking.vert", "picking.frag");
-    // Get a handle for our "pickingColorID" uniform
-    pickingColorID = glGetUniformLocation(pickingProgramID, "PickingColor");
-  
     // set background color to black
     //  glClearColor(0.718,0.808,0.857,1.0);
     glClearColor(0,0,0,1.0);
@@ -97,17 +92,14 @@ void Futurama::init(){
   
     // enable antialiasing
     glEnable(GL_MULTISAMPLE);
-
-  //pickingShader.loadVertexShader("Shaders/picking.vert");
-  //pickingShader.loadFragmentShader("Shaders/picking.frag");
 }
 
 // add a scenegraph
-void Futurama::addSceneGraph(SceneGraph *sceneGraph, std::map<int, Node> nodeMap){
+void Futurama::addSceneGraph(SceneGraph *sceneGraph){
   
   sceneGraph->addLightSource(lightSource);
   sceneGraph->addnodeMap(nodeMap);
-  Futurama::sceneGraph= sceneGraph;
+  Futurama::sceneGraph = sceneGraph;
 }
 
 // adjust to new window size
@@ -288,49 +280,61 @@ void Futurama::handleSpecialKeys(){
 void Futurama::mousePressed() {
     cout << "mouse pressed " << "(" << Input::mouse.position.x << ", " << Input::mouse.position.y << ")" << endl;
     // Clear the screen in white
-    glClearColor(1.0f, 1.0f, 1.0f, 1.0f);
+    glClearColor(0.0f, 0.0f, 0.0f, 0.0f);
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-    glUseProgram(pickingProgramID);
-
-    // Only the positions are needed (not the UVs and normals)
-    glEnableVertexAttribArray(0);
-
+    
     // draw the scenegraph
-    sceneGraph->traversePicking(mat4(1), nodeMap);
-    drawCameraParameters();
+
+    //sceneGraph->addRootNode(node);
+    sceneGraph->traversePicking(mat4(1));
+    //drawCameraParameters();
     // display back buffer
-    Context::window->swapBuffers();
+    //Context::window->swapBuffers();
 
-    glDisableVertexAttribArray(0);
-
-    // Wait until all the pending drawing commands are really done.
-    // Ultra-mega-over slow ! 
-    // There are usually a long time between glDrawElements() and
-    // all the fragments completely rasterized.
+    //glDisableVertexAttribArray(0);
     glFlush();
     glFinish();
 
     glPixelStorei(GL_UNPACK_ALIGNMENT, 1);
-
-    // Read the pixel at the center of the screen.
-    // You can also use glfwGetMousePos().
-    // Ultra-mega-over slow too, even for 1 pixel, 
-    // because the framebuffer is on the GPU.
     unsigned char data[4];
     glReadPixels(Input::mouse.position.x, Input::mouse.position.y, 1, 1, GL_RGBA, GL_UNSIGNED_BYTE, data);
+    cout << data[0]/255.0f << ", " << data[1] / 255.0f << ", " << data[2] / 255.0f << endl;
 
     // Convert the color back to an integer ID
     int pickedID =
         data[0] +
         data[1] * 256 +
         data[2] * 256 * 256;
+    cout << "pickedID=" << pickedID << endl;
 
-    if (pickedID == 0x00ffffff) { // Full white, must be the background !
-        cout << "background"<< endl;
+    if (pickedID == 0xffffffff) { // Full white, must be the background !
+        cout << "background" << endl;
     }
     else {
-        cout << "id=" << pickedID;
+        switch (pickedID) {
+            case 0: cout << "picked = torso" << endl;
+            case 1: cout << "picked = head" << endl;
+            case 2: cout << "picked = antenna" << endl;
+            case 3: cout << "picked = left arm" << endl;
+            case 4: cout << "picked = right arm" << endl;
+            case 5: cout << "picked = left leg" << endl;
+            case 6: cout << "picked = right leg" << endl;
+            case 7: cout << "picked = left foot" << endl;
+            case 8: cout << "picked = right foot" << endl;
+        }
     }
+
+    // display normally
+    glClearColor(0.0f, 0.0f, 0.0f, 0.0f);
+    glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+
+    // draw the scenegraph
+    sceneGraph->traverse(mat4(1));
+
+    drawCameraParameters();
+
+    // display back buffer
+    Context::window->swapBuffers();
 }
 
 vector< pair < int, string > > Futurama::menuEntries{{Menu::QUIT, "quit"},
@@ -354,7 +358,6 @@ void Futurama::menu(int id){
   }
 }
 
-
 int main(int argc, char** argv){
 
   // initialize OpenGL context
@@ -365,13 +368,16 @@ int main(int argc, char** argv){
 
   //  build the robot hierarchy (see robot.cpp)
   Node *root= Robot::build();
+  Node *node = root;
+
   std::map<int, Node> nodeMap = Robot::nodeMap;
-  //cout << "Node count: " << nodeMap.size() << endl;
 
   //make scenegraph
   SceneGraph *sceneGraph= new SceneGraph(root);
+  sceneGraph->addRootNode(node);
+  sceneGraph->addnodeMap(nodeMap);
 
-  Futurama::addSceneGraph(sceneGraph, nodeMap);
+  Futurama::addSceneGraph(sceneGraph);
  
   //start event loop
   InputManager<Futurama>::startEventLoop();

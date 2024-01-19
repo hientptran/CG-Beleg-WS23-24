@@ -33,10 +33,12 @@
     <ClInclude Include="shader.hpp" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="picking.frag" />
-    <None Include="picking.vert" />
+    <None Include="shaders\picking.frag" />
+    <None Include="shaders\picking.vert" />
     <None Include="shaders\RGBCube\rgb-cube.frag" />
     <None Include="shaders\RGBCube\rgb-cube.vert" />
+    <None Include="shaders\toon.frag" />
+    <None Include="shaders\toon.vert" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\Application.cpp" />
