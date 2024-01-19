@@ -48,6 +48,11 @@ void SceneGraph::traversePicking(mat4 modelView) {
 	traversePicking(root, modelView);
 }
 
+void SceneGraph::selectNode(Node targetNode) {
+
+	selectNode(root, targetNode);
+}
+
 // reset all rotations in the scenegraph
 // nothing to do here
 // (see helper function)
@@ -82,6 +87,18 @@ void SceneGraph::right(){
   selected->select();
 }
 
+void SceneGraph::selectNode(Node *node, Node targetNode) {
+	if (node == NULL) return;
+	if (targetNode == *node) {
+		selected->deselect();
+		selected = node;
+		selected->select();
+		return;
+	}
+	selectNode(node->getNext(),targetNode);
+	selectNode(node->getChild(), targetNode);
+}
+
 // increment / decrement rotation of selected node
 void SceneGraph::rotate(float x, float y, float z){
   selected->rotate(x, y, z);
@@ -103,6 +120,7 @@ void SceneGraph::traverse(Node *node, mat4 modelMatrix){
     traverse(node->getChild(), modelMatrix); //aber eigentlich neue Matrix übergeben
 }
 
+// Draw alternative colors for picking
 void SceneGraph::traversePicking(Node *node, glm::mat4 modelMatrix) {
 	if (node == NULL) return;	
 	//node = *node.getNext();
@@ -111,25 +129,19 @@ void SceneGraph::traversePicking(Node *node, glm::mat4 modelMatrix) {
 	int r = 0;
 	int g = 0;
 	int b = 0;
-	//cout << nodeMap.size() << endl;
 	for (int i = 1; i <= nodeMap.size(); i++) {
-		//cout << i << endl;
 		color = vec4(0.0f, 0.0f, 0.0f, 0.0f);
 		if (nodeMap.at(i) == *node) {
 			// Convert "i", the integer mesh ID, into an RGB color
 			r = (i & 0x000000FF) >> 0;
 			g = (i & 0x0000FF00) >> 8;
 			b = (i & 0x00FF0000) >> 16;
-			//std::cout << "r:" << r << "g:" << g << "b:" << b << endl;
-			//cout << i << endl;
-			//color = vec4(r, g, b, 1.0f);
-			cout << r / 255.0f << ", " << g / 255.0f << ", " << b / 255.0f << endl;
+			//cout << r / 255.0f << ", " << g / 255.0f << ", " << b / 255.0f << endl;
 			color = vec4(r / 255.0f, g / 255.0f, b / 255.0f, 1.0f);
 			node->renderPicking(projectionMatrix, viewMatrix, modelMatrix, lightSource, color);
 			break;
 		} 
 	}
-	
 	traversePicking(node->getChild(), modelMatrix);
 }
 

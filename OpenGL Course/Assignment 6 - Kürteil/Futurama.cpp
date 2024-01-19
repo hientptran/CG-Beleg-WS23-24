@@ -55,9 +55,6 @@ Node *Futurama::node = NULL;
 SceneGraph *Futurama::sceneGraph= NULL;
 bool Futurama::bender= false;
 
-// Create and compile our GLSL program from the shaders
-//GLuint programID = LoadShaders("StandardShading.vertexshader", "StandardShading.fragmentshader");
-//GLuint pickingProgramID = LoadShaders("Picking.vertexshader", "Picking.fragmentshader");
 glsl::Shader Futurama::pickingShader;
 
 const OpenGLApplication::Config Futurama::config(glm::uvec2(2, 1),
@@ -98,7 +95,6 @@ void Futurama::init(){
 void Futurama::addSceneGraph(SceneGraph *sceneGraph){
   
   sceneGraph->addLightSource(lightSource);
-  //sceneGraph->addnodeMap(nodeMap);
   Futurama::sceneGraph = sceneGraph;
 }
 
@@ -279,17 +275,17 @@ void Futurama::handleSpecialKeys(){
 
 void Futurama::mousePressed() {
     cout << "mouse pressed " << "(" << Input::mouse.position.x << ", " << Input::mouse.position.y << ")" << endl;
-    // Clear the screen in white
-    glClearColor(0.0f, 0.0f, 0.0f, 0.0f);
+
+    //glClearColor(0.0f, 0.0f, 0.0f, 0.0f);
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
     
     // draw the scenegraph
 
     //sceneGraph->addRootNode(node);
     sceneGraph->traversePicking(mat4(1));
-    drawCameraParameters();
+    //drawCameraParameters();
     // display back buffer
-    Context::window->swapBuffers();
+    //Context::window->swapBuffers();
 
     //glDisableVertexAttribArray(0);
     glFlush();
@@ -298,7 +294,6 @@ void Futurama::mousePressed() {
     glPixelStorei(GL_UNPACK_ALIGNMENT, 1);
     unsigned char data[4];
     glReadPixels(Input::mouse.position.x, Context::window->width()-Input::mouse.position.y, 1, 1, GL_RGBA, GL_UNSIGNED_BYTE, data);
-    cout << data[0]/255.0f << endl;
 
     // Convert the color back to an integer ID
     int pickedID = data[0];
@@ -316,17 +311,8 @@ void Futurama::mousePressed() {
         case 9: cout << "picked = antenna" << endl; break;
     }
 
-    //// display normally
-    //glClearColor(0.0f, 0.0f, 0.0f, 0.0f);
-    //glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-
-    //// draw the scenegraph
-    //sceneGraph->traverse(mat4(1));
-
-    //drawCameraParameters();
-
-    //// display back buffer
-    //Context::window->swapBuffers();
+    if (pickedID != 0) sceneGraph->selectNode(nodeMap.at(pickedID));
+    Futurama::display();
 }
 
 vector< pair < int, string > > Futurama::menuEntries{{Menu::QUIT, "quit"},
@@ -350,6 +336,10 @@ void Futurama::menu(int id){
   }
 }
 
+void Futurama::addNodeMap(std::map<int, Node> newMap) {
+    nodeMap = newMap;
+}
+
 int main(int argc, char** argv){
 
   // initialize OpenGL context
@@ -363,6 +353,7 @@ int main(int argc, char** argv){
   Node *node = root;
 
   std::map<int, Node> nodeMap = Robot::nodeMap;
+  Futurama::addNodeMap(nodeMap);
 
   //make scenegraph
   SceneGraph *sceneGraph= new SceneGraph(root);

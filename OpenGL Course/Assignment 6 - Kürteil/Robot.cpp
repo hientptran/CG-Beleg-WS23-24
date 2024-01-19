@@ -83,7 +83,7 @@ static Node leftFoot(0, -1.75, 0,
 		     0, 0, 0,
 		     0, 0, 0);
 
-static Node rightFoot(0, -1.75, 0,
+static Node rightFoot(0, -1.751, 0,
 		      0.9, 0.25, 1.5,
 		      0, 0, 0,
 		      0, 0, 0);

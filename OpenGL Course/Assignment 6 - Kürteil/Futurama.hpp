@@ -34,6 +34,12 @@ public:
   // add a scenegraph
   static void addSceneGraph(SceneGraph *sceneGraph);
 
+  // add a node map
+  static void addNodeMap(std::map<int, Node> newMap);
+
+  // add a node map
+  static void addRoot(Node root);
+
   // display scene
   static void display(void);
  
@@ -63,7 +69,6 @@ private:
 
   static void computeViewMatrix(void);
   static void computeProjectionMatrix(void);
-
   static void drawCameraParameters(void);
   
   // the scenegraphs

@@ -23,7 +23,6 @@ public:
 
   // traverse and draw the scenegraph
   void traverse(glm::mat4 modelView);
-
   void traversePicking(glm::mat4 modelView);
 
   // navigation in tree
@@ -32,6 +31,7 @@ public:
   void down();
   void left();
   void right();
+  void selectNode(Node targetNode);
 
   // increment / decrement rotation of selected node
   void rotate(float x, float y, float z);
@@ -66,6 +66,9 @@ private:
 
   // currently selected node
   Node *selected;
+
+  // select a node
+  void selectNode(Node* node, Node targetNode);
 
   //glsl::Shader *shader;
 

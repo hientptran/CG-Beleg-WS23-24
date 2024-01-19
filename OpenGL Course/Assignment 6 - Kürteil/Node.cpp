@@ -72,7 +72,7 @@ bool Node::operator<(const Node& other) const
 bool Node::operator==(const Node& other) const
 {
     
-    if ((position == other.position)   && (dimension == other.dimension)   && (joint == other.joint)) return true;
+    if (((position == other.position)   && (dimension == other.dimension)   && (joint == other.joint)) && (this->parent == other.parent)) return true;
     else return false;
 }
 
