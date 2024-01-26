@@ -35,6 +35,8 @@ public:
 
   // increment / decrement rotation of selected node
   void rotate(float x, float y, float z);
+
+  void rotateWithMouse(float x, float y, float z);
   
   // reset all rotations
   void reset();

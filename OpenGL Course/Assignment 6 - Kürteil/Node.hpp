@@ -110,6 +110,9 @@ protected:
   // increment / decrement rotation
   void rotate(float x, float y, float z);
 
+  // increment / decrement rotation
+  void rotateWithMouse(float x, float y, float z);
+
   // return parent / child / siblings
   Node *getNext();
   Node *getPrevious();

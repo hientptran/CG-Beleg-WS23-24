@@ -314,6 +314,27 @@ void Futurama::mousePressed() {
     Futurama::display();
 }
 
+void Futurama::mouseDragged() {
+
+    // rotation units
+    float step = 2.0;
+
+    //print out mouse movenent when dragged
+    //cout << "mouse dragged " << "(" << Input::mouse.movement.x << ", " << Input::mouse.movement.y << ")" << endl;
+
+    sceneGraph->rotateWithMouse(Input::mouse.movement.x, 0, 0);
+    sceneGraph->rotateWithMouse(0, Input::mouse.movement.y, 0);
+    Context::window->redisplay();
+
+    // mouse callbacks
+    //static void mouseButton(int button, int state, int x, int y);
+    //static void mouseMoved(int x, int y);
+    //static void mouseDragged(int x, int y);
+
+}
+
+void Futurama::mouseReleased() {}
+
 vector< pair < int, string > > Futurama::menuEntries{{Menu::QUIT, "quit"},
 						     {Menu::RESET, "reset"},
 						     {Menu::BENDER, "toggle [b]ender"}};

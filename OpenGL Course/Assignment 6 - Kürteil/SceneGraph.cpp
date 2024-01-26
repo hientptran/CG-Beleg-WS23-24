@@ -104,6 +104,10 @@ void SceneGraph::rotate(float x, float y, float z){
   selected->rotate(x, y, z);
 }
 
+void SceneGraph::rotateWithMouse(float x, float y, float z) {
+	selected->rotateWithMouse(x, y, z);
+}
+
 // traverse and draw the scenegraph from a given node
 void SceneGraph::traverse(Node *node, mat4 modelMatrix){
 

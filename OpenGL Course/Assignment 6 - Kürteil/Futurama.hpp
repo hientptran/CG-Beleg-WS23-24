@@ -55,6 +55,12 @@ public:
   // mouse click callback
   static void mousePressed();
 
+  // mouse drag callback
+  static void mouseDragged();
+
+  // mouse release callback
+  static void mouseReleased();
+
   // keyboard callback for special keys 
   static void handleSpecialKeys();
     
