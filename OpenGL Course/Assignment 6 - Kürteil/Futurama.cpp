@@ -281,7 +281,6 @@ void Futurama::mousePressed() {
     
     // draw the scenegraph
 
-    //sceneGraph->addRootNode(node);
     sceneGraph->traversePicking(mat4(1));
     //drawCameraParameters();
     // display back buffer
