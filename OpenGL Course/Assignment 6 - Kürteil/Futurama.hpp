@@ -104,7 +104,7 @@ private:
   struct Menu{
     enum Item{QUIT,
 	      RESET,
-	      BENDER,
+	      DANCE,
 	      TEXTURING,
 	      
     };

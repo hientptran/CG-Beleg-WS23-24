@@ -1,36 +1,16 @@
 ﻿  Futurama.cpp
-C:\Users\yagro\OneDrive\Dokumente\Studium\CG\Lang\Kürteil\Final\OpenGL Course\Assignment 6 - Kürteil\Futurama.cpp(169,49): warning C4244: "Argument": Konvertierung von "unsigned int" in "float", möglicher Datenverlust
-C:\Users\yagro\OneDrive\Dokumente\Studium\CG\Lang\Kürteil\Final\OpenGL Course\Assignment 6 - Kürteil\Futurama.cpp(172,49): warning C4244: "Argument": Konvertierung von "unsigned int" in "float", möglicher Datenverlust
-C:\Users\yagro\OneDrive\Dokumente\Studium\CG\Lang\Kürteil\Final\OpenGL Course\Assignment 6 - Kürteil\Futurama.cpp(224,31): warning C4305: "-=": Verkürzung von "double" in "float"
-C:\Users\yagro\OneDrive\Dokumente\Studium\CG\Lang\Kürteil\Final\OpenGL Course\Assignment 6 - Kürteil\Futurama.cpp(230,17): warning C4305: "+=": Verkürzung von "double" in "float"
-C:\Users\yagro\OneDrive\Dokumente\Studium\CG\Lang\Kürteil\Final\OpenGL Course\Assignment 6 - Kürteil\Futurama.cpp(325,54): warning C4244: "Argument": Konvertierung von "T" in "float", möglicher Datenverlust
-C:\Users\yagro\OneDrive\Dokumente\Studium\CG\Lang\Kürteil\Final\OpenGL Course\Assignment 6 - Kürteil\Futurama.cpp(325,54): warning C4244:         with
-C:\Users\yagro\OneDrive\Dokumente\Studium\CG\Lang\Kürteil\Final\OpenGL Course\Assignment 6 - Kürteil\Futurama.cpp(325,54): warning C4244:         [
-C:\Users\yagro\OneDrive\Dokumente\Studium\CG\Lang\Kürteil\Final\OpenGL Course\Assignment 6 - Kürteil\Futurama.cpp(325,54): warning C4244:             T=int
-C:\Users\yagro\OneDrive\Dokumente\Studium\CG\Lang\Kürteil\Final\OpenGL Course\Assignment 6 - Kürteil\Futurama.cpp(325,54): warning C4244:         ]
-C:\Users\yagro\OneDrive\Dokumente\Studium\CG\Lang\Kürteil\Final\OpenGL Course\Assignment 6 - Kürteil\Futurama.cpp(326,57): warning C4244: "Argument": Konvertierung von "T" in "float", möglicher Datenverlust
-C:\Users\yagro\OneDrive\Dokumente\Studium\CG\Lang\Kürteil\Final\OpenGL Course\Assignment 6 - Kürteil\Futurama.cpp(326,57): warning C4244:         with
-C:\Users\yagro\OneDrive\Dokumente\Studium\CG\Lang\Kürteil\Final\OpenGL Course\Assignment 6 - Kürteil\Futurama.cpp(326,57): warning C4244:         [
-C:\Users\yagro\OneDrive\Dokumente\Studium\CG\Lang\Kürteil\Final\OpenGL Course\Assignment 6 - Kürteil\Futurama.cpp(326,57): warning C4244:             T=int
-C:\Users\yagro\OneDrive\Dokumente\Studium\CG\Lang\Kürteil\Final\OpenGL Course\Assignment 6 - Kürteil\Futurama.cpp(326,57): warning C4244:         ]
-  Node.cpp
-  Robot.cpp
-C:\Users\yagro\OneDrive\Dokumente\Studium\CG\Lang\Kürteil\Final\OpenGL Course\Assignment 6 - Kürteil\Robot.cpp(58,11): warning C4305: "Argument": Verkürzung von "double" in "float"
-C:\Users\yagro\OneDrive\Dokumente\Studium\CG\Lang\Kürteil\Final\OpenGL Course\Assignment 6 - Kürteil\Robot.cpp(57,12): warning C4305: "Argument": Verkürzung von "double" in "float"
-C:\Users\yagro\OneDrive\Dokumente\Studium\CG\Lang\Kürteil\Final\OpenGL Course\Assignment 6 - Kürteil\Robot.cpp(63,7): warning C4305: "Argument": Verkürzung von "double" in "float"
-C:\Users\yagro\OneDrive\Dokumente\Studium\CG\Lang\Kürteil\Final\OpenGL Course\Assignment 6 - Kürteil\Robot.cpp(62,17): warning C4305: "Argument": Verkürzung von "double" in "float"
-C:\Users\yagro\OneDrive\Dokumente\Studium\CG\Lang\Kürteil\Final\OpenGL Course\Assignment 6 - Kürteil\Robot.cpp(62,7): warning C4305: "Argument": Verkürzung von "double" in "float"
-C:\Users\yagro\OneDrive\Dokumente\Studium\CG\Lang\Kürteil\Final\OpenGL Course\Assignment 6 - Kürteil\Robot.cpp(68,9): warning C4305: "Argument": Verkürzung von "double" in "float"
-C:\Users\yagro\OneDrive\Dokumente\Studium\CG\Lang\Kürteil\Final\OpenGL Course\Assignment 6 - Kürteil\Robot.cpp(67,18): warning C4305: "Argument": Verkürzung von "double" in "float"
-C:\Users\yagro\OneDrive\Dokumente\Studium\CG\Lang\Kürteil\Final\OpenGL Course\Assignment 6 - Kürteil\Robot.cpp(67,8): warning C4305: "Argument": Verkürzung von "double" in "float"
-C:\Users\yagro\OneDrive\Dokumente\Studium\CG\Lang\Kürteil\Final\OpenGL Course\Assignment 6 - Kürteil\Robot.cpp(72,15): warning C4305: "Argument": Verkürzung von "double" in "float"
-C:\Users\yagro\OneDrive\Dokumente\Studium\CG\Lang\Kürteil\Final\OpenGL Course\Assignment 6 - Kürteil\Robot.cpp(72,7): warning C4305: "Argument": Verkürzung von "double" in "float"
-C:\Users\yagro\OneDrive\Dokumente\Studium\CG\Lang\Kürteil\Final\OpenGL Course\Assignment 6 - Kürteil\Robot.cpp(77,16): warning C4305: "Argument": Verkürzung von "double" in "float"
-C:\Users\yagro\OneDrive\Dokumente\Studium\CG\Lang\Kürteil\Final\OpenGL Course\Assignment 6 - Kürteil\Robot.cpp(77,8): warning C4305: "Argument": Verkürzung von "double" in "float"
-C:\Users\yagro\OneDrive\Dokumente\Studium\CG\Lang\Kürteil\Final\OpenGL Course\Assignment 6 - Kürteil\Robot.cpp(82,8): warning C4305: "Argument": Verkürzung von "double" in "float"
-C:\Users\yagro\OneDrive\Dokumente\Studium\CG\Lang\Kürteil\Final\OpenGL Course\Assignment 6 - Kürteil\Robot.cpp(87,9): warning C4305: "Argument": Verkürzung von "double" in "float"
-C:\Users\yagro\OneDrive\Dokumente\Studium\CG\Lang\Kürteil\Final\OpenGL Course\Assignment 6 - Kürteil\Robot.cpp(86,27): warning C4305: "Argument": Verkürzung von "double" in "float"
-  SceneGraph.cpp
-C:\Users\yagro\OneDrive\Dokumente\Studium\CG\Lang\Kürteil\Final\OpenGL Course\Assignment 6 - Kürteil\SceneGraph.cpp(136,20): warning C4018: "<=": Konflikt zwischen "signed" und "unsigned"
-  Code wird generiert...
+C:\Users\yagro\OneDrive\Dokumente\Studium\CG\Lang\Kürteil\Final\OpenGL Course\Assignment 6 - Kürteil\Futurama.cpp(171,49): warning C4244: "Argument": Konvertierung von "unsigned int" in "float", möglicher Datenverlust
+C:\Users\yagro\OneDrive\Dokumente\Studium\CG\Lang\Kürteil\Final\OpenGL Course\Assignment 6 - Kürteil\Futurama.cpp(174,49): warning C4244: "Argument": Konvertierung von "unsigned int" in "float", möglicher Datenverlust
+C:\Users\yagro\OneDrive\Dokumente\Studium\CG\Lang\Kürteil\Final\OpenGL Course\Assignment 6 - Kürteil\Futurama.cpp(226,31): warning C4305: "-=": Verkürzung von "double" in "float"
+C:\Users\yagro\OneDrive\Dokumente\Studium\CG\Lang\Kürteil\Final\OpenGL Course\Assignment 6 - Kürteil\Futurama.cpp(232,17): warning C4305: "+=": Verkürzung von "double" in "float"
+C:\Users\yagro\OneDrive\Dokumente\Studium\CG\Lang\Kürteil\Final\OpenGL Course\Assignment 6 - Kürteil\Futurama.cpp(351,54): warning C4244: "Argument": Konvertierung von "T" in "float", möglicher Datenverlust
+C:\Users\yagro\OneDrive\Dokumente\Studium\CG\Lang\Kürteil\Final\OpenGL Course\Assignment 6 - Kürteil\Futurama.cpp(351,54): warning C4244:         with
+C:\Users\yagro\OneDrive\Dokumente\Studium\CG\Lang\Kürteil\Final\OpenGL Course\Assignment 6 - Kürteil\Futurama.cpp(351,54): warning C4244:         [
+C:\Users\yagro\OneDrive\Dokumente\Studium\CG\Lang\Kürteil\Final\OpenGL Course\Assignment 6 - Kürteil\Futurama.cpp(351,54): warning C4244:             T=int
+C:\Users\yagro\OneDrive\Dokumente\Studium\CG\Lang\Kürteil\Final\OpenGL Course\Assignment 6 - Kürteil\Futurama.cpp(351,54): warning C4244:         ]
+C:\Users\yagro\OneDrive\Dokumente\Studium\CG\Lang\Kürteil\Final\OpenGL Course\Assignment 6 - Kürteil\Futurama.cpp(352,57): warning C4244: "Argument": Konvertierung von "T" in "float", möglicher Datenverlust
+C:\Users\yagro\OneDrive\Dokumente\Studium\CG\Lang\Kürteil\Final\OpenGL Course\Assignment 6 - Kürteil\Futurama.cpp(352,57): warning C4244:         with
+C:\Users\yagro\OneDrive\Dokumente\Studium\CG\Lang\Kürteil\Final\OpenGL Course\Assignment 6 - Kürteil\Futurama.cpp(352,57): warning C4244:         [
+C:\Users\yagro\OneDrive\Dokumente\Studium\CG\Lang\Kürteil\Final\OpenGL Course\Assignment 6 - Kürteil\Futurama.cpp(352,57): warning C4244:             T=int
+C:\Users\yagro\OneDrive\Dokumente\Studium\CG\Lang\Kürteil\Final\OpenGL Course\Assignment 6 - Kürteil\Futurama.cpp(352,57): warning C4244:         ]
   Futurama.vcxproj -> C:\Users\yagro\OneDrive\Dokumente\Studium\CG\Lang\Kürteil\Final\OpenGL Course\Assignment 6 - Kürteil\Debug\Futurama.exe

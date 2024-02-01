@@ -32,6 +32,7 @@ public:
   void left();
   void right();
   void selectNode(Node targetNode);
+  void dance();
 
   // increment / decrement rotation of selected node
   void rotate(float x, float y, float z);

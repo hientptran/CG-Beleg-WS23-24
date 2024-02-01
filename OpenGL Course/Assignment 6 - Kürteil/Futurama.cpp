@@ -11,6 +11,8 @@
 #include <iostream>
 #include <iomanip> 
 #include <sstream>
+#include <thread>
+#include <chrono>
 
 #include "Futurama.hpp"
 #include "Context.hpp"
@@ -236,6 +238,30 @@ void Futurama::keyPressed(){
     sceneGraph->reset();
     Context::window->redisplay();
     break;
+  case 'd':
+      sceneGraph->reset();
+      Context::window->redisplay();
+
+      std::this_thread::sleep_for(std::chrono::seconds(1));
+
+      sceneGraph->rotate(step * 30, 0, 0);
+      Context::window->redisplay();
+      std::this_thread::sleep_for(std::chrono::seconds(1));
+/*
+      std::thread([step]() {
+          std::this_thread::sleep_for(std::chrono::seconds(1));
+          sceneGraph->rotate(step * 30, 0, 0);
+          Context::window->redisplay();
+          }).detach();
+
+      // Warte für eine Sekunde
+      std::thread([step]() {
+          std::this_thread::sleep_for(std::chrono::seconds(1));
+          sceneGraph->rotate(0, -step*30, 0);
+          Context::window->redisplay();
+          }).detach();
+          */
+      break;
   case Keyboard::Key::SPECIAL:
     handleSpecialKeys();
     break;  
@@ -337,7 +363,7 @@ void Futurama::mouseReleased() {}
 
 vector< pair < int, string > > Futurama::menuEntries{{Menu::QUIT, "quit"},
 						     {Menu::RESET, "reset"},
-						     {Menu::BENDER, "toggle [b]ender"}};
+						     {Menu::DANCE, "[d]ance"}};
 						      
 // mouse menu control
 void Futurama::menu(int id){
