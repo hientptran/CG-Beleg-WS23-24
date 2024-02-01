@@ -98,7 +98,7 @@ protected:
   // according to its position, 
   // rotation, and rotation center
   // and call draw() methods
-  void render(glm::mat4 projectionMatrix, glm::mat4 viewMatrix, glm::mat4 &modelMatrix, LightSource lightSource);
+  void render(glm::mat4 projectionMatrix, glm::mat4 viewMatrix, glm::mat4& modelMatrix, LightSource lightSource);
 
   void renderPicking(glm::mat4 projectionMatrix, glm::mat4 viewMatrix, glm::mat4& modelMatrix, LightSource lightSource, glm::vec4 color);
   

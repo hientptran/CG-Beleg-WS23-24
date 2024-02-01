@@ -211,9 +211,10 @@ void Node::rotate(float x, float y, float z){
 
 void Node::rotateWithMouse(float x, float y, float z) {
 
-    rotationMatrix = glm::rotate(radians(x), vec3(1, 0, 0)) * rotationMatrix;   //todo: von rechts multiplizieren damit im Weltkoordinatensystem
-    rotationMatrix = glm::rotate(radians(y), vec3(0, 1, 0)) * rotationMatrix;   //todo: x und y Achse verweselt
-    rotationMatrix = glm::rotate(radians(z), vec3(0, 0, 1)) * rotationMatrix;
+    rotationMatrix *= glm::rotate(radians(x), vec3(0, 1, 0));
+    rotationMatrix *= glm::rotate(radians(y), vec3(1, 0, 0));
+    rotationMatrix *= glm::rotate(radians(z), vec3(0, 0, 1));
+    
 }
 
 // retrieve inherited shader
