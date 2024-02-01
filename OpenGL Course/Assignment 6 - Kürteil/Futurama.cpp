@@ -63,7 +63,7 @@ const OpenGLApplication::Config Futurama::config(glm::uvec2(2, 1),
 						8,
 						glm::uvec2(50, 50),
 						uvec2(512, 512),
-						"Computer Graphics Assignment 2 - Futurama");
+						"Computer Graphics Assignment 6 - Kürteil");
 
 
 void Futurama::init(){
@@ -273,6 +273,7 @@ void Futurama::handleSpecialKeys(){
   }
 }
 
+
 void Futurama::mousePressed() {
     cout << "mouse pressed " << "(" << Input::mouse.position.x << ", " << Input::mouse.position.y << ")" << endl;
 
@@ -292,6 +293,8 @@ void Futurama::mousePressed() {
 
     glPixelStorei(GL_UNPACK_ALIGNMENT, 1);
     unsigned char data[4];
+
+    // SCHRITT 6: FARBE VON DER MAUSPOSITION LESEN, ZURÜCK IN NODE-IDS KONVERTIEREN
     glReadPixels(Input::mouse.position.x, Context::window->width()-Input::mouse.position.y, 1, 1, GL_RGBA, GL_UNSIGNED_BYTE, data);
 
     // Convert the color back to an integer ID
@@ -372,6 +375,7 @@ int main(int argc, char** argv){
   Node *root= Robot::build();
   Node *node = root;
 
+  // SCHRITT 3: NODEMAP BEIM BAUEN DES ROBOTERS ZUGREIFEN
   std::map<int, Node> nodeMap = Robot::nodeMap;
   Futurama::addNodeMap(nodeMap);
 

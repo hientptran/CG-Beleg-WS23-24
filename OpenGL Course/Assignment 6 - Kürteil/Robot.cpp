@@ -126,6 +126,7 @@ Node *Robot::build(){
   toonShader.bindVertexAttrib("texCoord", TriangleMesh::attribTexCoord);
   toonShader.link();
 
+  // SCHRITT 1: PICKING-SHADER HINZUFÜGEN
   pickingShader.addVertexShader(version);
   pickingShader.loadVertexShader("shaders/picking.vert");
   pickingShader.compileVertexShader();
@@ -160,7 +161,8 @@ Node *Robot::build(){
   rightFoot.setParent(&rightLeg);
   // ML schnapp
 
-	nodeMap.emplace(1,torso);
+  // SCHRITT 2: ALLEN NODES IDS ZUWEISEN, IN NODEMAP SPEICHERN
+ 	nodeMap.emplace(1,torso);
 	nodeMap.emplace(2,head);
 	nodeMap.emplace(3,leftArm);
 	nodeMap.emplace(4,rightArm);
