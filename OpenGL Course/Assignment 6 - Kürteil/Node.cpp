@@ -174,30 +174,18 @@ void Node::draw(mat4 projectionMatrix, mat4 viewMatrix, mat4 modelMatrix, LightS
   shader->unbind();
 }
 
+// SCHRITT 5: JEDEN NODE IN DER PICKING-FARBE ZEICHNEN
 void Node::drawPicking(mat4 projectionMatrix, mat4 viewMatrix, mat4 modelMatrix, LightSource lightSource, vec4 color) {
 
-    //glsl::Shader* shader = retrieveShader();
     glsl::Shader* pickingShader = retrievePickingShader();
     TriangleMesh* mesh = retrieveMesh();
 
-    //shader->bind();
-
-    //shader->setUniform("transformation", projectionMatrix * viewMatrix * modelMatrix);
-    //shader->setUniform("lightPosition", inverse(modelMatrix) * lightSource.position);
-
-    //shader->setUniform("texturing", false);
-
-    //shader->setUniform("color", color);
-
-    /////////
     pickingShader->bind();
     pickingShader->setUniform("transformation", projectionMatrix * viewMatrix * modelMatrix);
     pickingShader->setUniform("PickingColor", color);
-    /////////
 
     mesh->draw();
 
-    //shader->unbind();
     pickingShader->unbind();
 }
 

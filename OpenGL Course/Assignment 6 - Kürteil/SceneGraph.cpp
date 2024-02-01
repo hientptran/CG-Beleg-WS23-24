@@ -120,19 +120,23 @@ void SceneGraph::traverse(Node *node, mat4 modelMatrix){
     traverse(node->getChild(), modelMatrix); //aber eigentlich neue Matrix übergeben
 }
 
-// Draw alternative colors for picking
+// SCHRITT 4: SCENEGRAPH REKURSIV IN ALTERNATIVEN (PICKING-)FARBEN ZEICHNEN
 void SceneGraph::traversePicking(Node *node, glm::mat4 modelMatrix) {
-	if (node == NULL) return;	
-	//node = *node.getNext();
+	if (node == NULL) {
+		return;
+	}
+
 	traversePicking(node->getNext(), modelMatrix);
 	vec4 color = vec4(0.0f, 0.0f, 0.0f, 0.0f);
 	int r = 0;
 	int g = 0;
 	int b = 0;
+
+	// Traverse through each node
 	for (int i = 1; i <= nodeMap.size(); i++) {
 		color = vec4(0.0f, 0.0f, 0.0f, 0.0f);
 		if (nodeMap.at(i) == *node) {
-			// Convert "i", the integer mesh ID, into an RGB color
+			// Convert "i", the integer node ID, into an RGB color
 			r = (i & 0x000000FF) >> 0;
 			g = (i & 0x0000FF00) >> 8;
 			b = (i & 0x00FF0000) >> 16;

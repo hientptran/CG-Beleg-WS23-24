@@ -1,3 +1,5 @@
+// PICKING COLOR SPEICHERN
+
 // Ouput data
 out vec4 color;
 

@@ -1,3 +1,5 @@
+// UMWANDLUNG DER POSITIONEN VON OBJEKTEN IN 3D-ZEICHENKOORDINATEN
+
 // Values that stay constant for the whole mesh.
 //uniform mat4 MVP;
 uniform mat4 transformation;
