@@ -298,7 +298,10 @@ void Futurama::mousePressed() {
     glReadPixels(Input::mouse.position.x, Context::window->width()-Input::mouse.position.y, 1, 1, GL_RGBA, GL_UNSIGNED_BYTE, data);
 
     // Convert the color back to an integer ID
-    int pickedID = data[0];
+    int pickedID =
+        data[0] +
+        data[1] * 256 +
+        data[2] * 256 * 256;
     cout << "pickedID = " << pickedID << endl;
     switch (pickedID) {
         case 0: cout << "background" << endl; break;
